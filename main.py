@@ -3,10 +3,16 @@ import face_recognition as fr
 import numpy as np
 from PIL import Image
 import os
-path = 'Azusa_Nakano_new_mugshot.png'
-img = Image.open(r'Azusa_Nakano_new_mugshot.png')
-img.show()
+import matplotlib
+# path = 'Azusa_Nakano_new_mugshot.png'
+# img = Image.open(r'Azusa_Nakano_new_mugshot.png')
+# img.show()
 
+
+
+
+#Photo plotting
+path = r''
 #Photo Capturing Part
 """cam = cv2.VideoCapture(0)
 cv2.namedWindow("test")
