@@ -20,3 +20,28 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 
 ## How to Use
 ...
+
+## Classes
+
+### Photo
+It represents a photo and all the faces and encodings in it. The interface is as follows:
+
+```python
+Photo
+  # Constructor and factory methods
+  __init__(path)          # Constructs a photo from an image file and locates all faces and encodings
+  load(path)              # Load a photo from a file which stores all faces
+
+  # Members
+  path                    # Path of the image file
+  id                      # Name of the image file
+  faces: [...face]        # A list of faces located in the photo
+
+  # Member functions
+  match(face, threshold)  # Matches the face and returns [...(dist, face)], a list of faces within threshold
+  save(path)              # Saves the 
+```
+
+
+
+## Roadmap
