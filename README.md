@@ -23,25 +23,90 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 
 ## Classes
 
-### Photo
-It represents a photo and all the faces and encodings in it. The interface is as follows:
+The major classes and their interface are shown below:
 
+**Face** represents a face and its encoding.
+```python
+Face
+  # Constructor and factory methods
+  __init__(path, pos, encoding)   # Intantiates a face
+
+  # Attributes
+  path          # Path of the image file
+  pos           # Position of the face in the image
+  encoding      # Encoding of the face
+
+  # Methods
+  compare(face) # Compares this face with another face and return the dist
+```
+
+**Photo** represents a photo and all the faces and encodings in it.
 ```python
 Photo
   # Constructor and factory methods
   __init__(path)          # Constructs a photo from an image file and locates all faces and encodings
-  load(path)              # Load a photo from a file which stores all faces
+  load(path)              # Loads a photo from an object file 
 
-  # Members
+  # Attributes
+  name                    # Name of the image file
   path                    # Path of the image file
-  id                      # Name of the image file
   faces: [...face]        # A list of faces located in the photo
 
-  # Member functions
-  match(face, threshold)  # Matches the face and returns [...(dist, face)], a list of faces within threshold
-  save(path)              # Saves the 
+  # Methods
+  save(path)              # Saves this object to path
+  match(face, threshold)  # Matches the face and returns a list of dists and faces within threshold
+    => [...(dist, face)]
 ```
 
+**Album** represents an album which contains a list of photos.
+```python
+Album
+  # Constructor and factory methods
+  __init__(folder)        # Constructs an album from an image folder and locates all faces and encodings in the images
+  load(path)              # Loads an album from an object file
 
+  # Attributes
+  name                    # Name of the album
+  path                    # Path of the image folder
+  photos: [...photo]      # A list of photos constructed from the image files
+
+  # Methods
+  save(path)              # Saves this object to path
+  match(face, threshold)  # Matches the face and returns a list of photos with dists and faces within threshold
+    => [...(photo, matches: [...(dist, face)]) ]
+```
+
+**Group** represents a group of photos contains single faces for training and matching.
+```python
+Group
+  # Constructor and factory methods
+  __init__(folder)        # Constructs a group from an image folder and locates all faces and encodings in the images
+  load(path)              # Loads a group from an object file
+
+  # Attributes
+  name                    # Name of the group
+  path                    # Path of the image folder
+  photos: [...photo]      # A list of photos constructed from the image files
+  faces: [...face]        # A list of faces from the image
+
+  # Methods
+  save(path)              # Saves this object to path
+```
+
+**Mail** represents an email client which sends matched photos to user through email.
+```python
+Mail
+  # Constructor and factory methods
+  __init__()              # Constructs an email client
+
+  # Attributes
+  service                 # Gmail API service
+
+  # Methods
+  send(name, email, photos)   # Send email
+```
+
+**Client** represents a user-interface to use the system.
 
 ## Roadmap
+...
