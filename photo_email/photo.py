@@ -4,10 +4,11 @@ plt.style.use('default')
 import os
 import cv2
 import numpy as np
+import importlib
+from face import *
 
 class Photo:
-    def __init__(self, name, path):
-        self.id = name
+    def __init__(self, path):
         self.path = path
         self.faces = []
         self.process()
@@ -17,4 +18,4 @@ class Photo:
         encoding = fr.api.face_encodings(img)
         location = fr.api.face_locations(img)
         for i in range(len(encoding)) :
-            self.faces.append((location[i], encoding[i]))
+            self.faces.append(Face(self.path, location[i], encoding[i]))
