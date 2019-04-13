@@ -1,8 +1,6 @@
 import face_recognition as fr
 from matplotlib import pyplot as plt
-plt.style.use('default')
 import os
-import cv2
 import numpy as np
 
 class Face :
