@@ -1,15 +1,23 @@
-import face_recognition as fr
 from matplotlib import pyplot as plt
-import os
+import face_recognition as fr
 import numpy as np
 import importlib
-from face import *
+import pickle
+import os
+from face import Face
 
 class Photo:
     def __init__(self, path):
         self.path = path
+        self.name = path.split('/')[-1]
         self.faces = []
         self.process()
+
+    def load(path):
+        ifile = open(path, 'rb')
+        file = pickle.load(ifile)
+        ifile.close()
+        return file
 
     def process(self):
         img = fr.api.load_image_file(self.path)
@@ -18,3 +26,7 @@ class Photo:
         for i in range(len(encoding)) :
             self.faces.append(Face(self.path, location[i], encoding[i]))
 
+    def save(self, path):
+        ofile = open(path + '/' + self.name + '_data', 'wb')
+        pickle.dump(self, ofile)
+        ofile.close

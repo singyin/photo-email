@@ -1,7 +1,8 @@
-import face_recognition as fr
 from matplotlib import pyplot as plt
-import os
+import face_recognition as fr
 import numpy as np
+import importlib
+import os
 
 class Face :
     def __init__(self, path, pos, encoding):
