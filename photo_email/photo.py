@@ -30,3 +30,10 @@ class Photo:
         ofile = open(path + '/' + self.name + '_data', 'wb')
         pickle.dump(self, ofile)
         ofile.close
+
+    def match(self, fc, threshold):
+        matches = []
+        for face in self.faces:
+            dist = fc.compare(face)
+            if dist <= threshold : matches.append((dist, face))
+        return matches
