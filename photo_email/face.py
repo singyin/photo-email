@@ -4,7 +4,7 @@ import numpy as np
 import importlib
 import os
 
-class Face :
+class face :
     def __init__(self, path, pos, encoding):
         self.path = np.array(path)
         self.pos = pos

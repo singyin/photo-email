@@ -4,9 +4,9 @@ import numpy as np
 import importlib
 import pickle
 import os
-from face import Face
+from face import face
 
-class Photo:
+class photo:
     def __init__(self, path):
         self.path = path
         self.name = path.split('/')[-1]
@@ -24,7 +24,7 @@ class Photo:
         location = fr.api.face_locations(img, model='hog')
         encoding = fr.api.face_encodings(img, known_face_locations=location, num_jitters=5)
         for i in range(len(encoding)) :
-            self.faces.append(Face(self.path, location[i], encoding[i]))
+            self.faces.append(face(self.path, location[i], encoding[i]))
 
     def save(self, path):
         ofile = open(path + '/' + self.name + '_data', 'wb')
