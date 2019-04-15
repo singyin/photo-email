@@ -79,7 +79,13 @@ http = credentials.authorize(httplib2.Http())
 service = discovery.build('gmail', 'v1', http=http)
 
 import send_email
+sender = "sy9711@syss.edu.hk"
+receiver = "sy9711@syss.edu.hk"
+subject = "Test"
+content = """
 
+"""
+photo_list = [r'C:\Users\4E34TsengWaiYin\Desktop\New folder\1.jpg',r'C:\Users\4E34TsengWaiYin\Desktop\New folder\2.jpg',r'C:\Users\4E34TsengWaiYin\Desktop\New folder\3.jpg']
 sendInst = send_email.send_email(service)
-message = sendInst.create_message_with_attachment('sy9711@syss.edu.hk','sy9711@syss.edu.hk','Testing 123','Hi there, This is a test from Python!', r'C:\FaceRecongnition\photo-email\tests\blackhole.jpg' )
+message = sendInst.create_message_with_attachment(sender,receiver,subject,content, photo_list)
 sendInst.send_message('me',message)
