@@ -1,13 +1,30 @@
 <Connected>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'loadwallpaper.jpg'
     BoxLayout:
         orientation: 'vertical'
         BoxLayout:
             orientation: 'horizontal'
             Label:
-                text: "You are now connected"
-                font_size: 32
-            Button:
-                text: "Disconnect"
+                text: "Welcome! You are now connected!"
                 font_size: 24
-                on_press: root.disconnect()
+                font_name: 'adventpro-bold'
+            Label:
+                text: "We will take few photos of you."
+                font_size: 24
+                font_name: 'adventpro-bold'
+        BoxLayout:
+            orientation: 'horizontal'
+            Label:
+            Label:
+            Label:
+            Label:
+            Button:
+                background_normal: 'continue.png'
+                background_down: 'continue_pressed.png'
+                size_hint: (0.9,0.5)
+         
         

@@ -3,7 +3,9 @@ from kivy.properties import StringProperty
 from kivy.config import Config
 from kivy.core.text import LabelBase
 from kivy.uix.boxlayout import BoxLayout
+import kivy.animation
 from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
+import kivy.uix.button
 import os
 from connected import Connected
 LabelBase.register(name='adventpro',fn_regular="adventpro-bold.ttf")
@@ -12,12 +14,11 @@ class Login(Screen):
     def do_login(self, loginText):
         app = App.get_running_app()
         app.username = loginText
-        self.manager.transition = SlideTransition(direction="left")
+        self.manager.transition = SlideTransition(direction='down')
         if (app.username.isdigit()):
             self.manager.current = 'connected'
         app.config.read(app.get_application_config())
         app.config.write()
-
     def resetForm(self):
         self.ids['login'].text = ""
 
@@ -29,7 +30,6 @@ class LoginApp(App):
 
         manager.add_widget(Login(name='login'))
         manager.add_widget(Connected(name='connected'))
-
         return manager
 
     def get_application_config(self):
