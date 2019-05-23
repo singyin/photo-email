@@ -2,6 +2,7 @@ import numpy as np
 import cv2
 import face_recognition as fr
 from face import face
+from album import album
 
 
 img = 0
@@ -37,4 +38,10 @@ cv2.destroyAllWindows()
 location = fr.api.face_locations(img)
 encoding = fr.api.face_encodings(img, known_face_locations=location)
 pht = face(0, location, encoding)
-print(pht.encoding)
+
+alb = album.load('C:/FaceRecognition/photo-email/tests/photos/album/train_data')
+paths = []
+
+for photo in alb.match(pht, 0.6):
+    paths.append(photo[0].path)
+
