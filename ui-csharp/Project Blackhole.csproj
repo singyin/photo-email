@@ -103,6 +103,9 @@
     <Content Include="bin\Source Pic\IMG_3044.JPG" />
     <Content Include="bin\Source Pic\IMG_3102.JPG" />
     <Content Include="bin\Source Pic\IMG_4255.JPG" />
+    <None Include="bin\Source Pic\tick.jpg" />
+    <None Include="bin\Source Pic\tick.png" />
+    <None Include="bin\Source Pic\tick-mark-png-image-100916.png" />
     <Content Include="bin\Source Pic\_MG_2994.JPG" />
     <Content Include="bin\Source Pic\_MG_4185.JPG" />
   </ItemGroup>
