@@ -44,6 +44,8 @@
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.Email = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -60,8 +62,14 @@
             // 
             // confirm_button
             // 
-            this.confirm_button.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.confirm_button.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.confirm_button.BackColor = System.Drawing.Color.White;
+            this.confirm_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.confirm_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.confirm_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.confirm_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.confirm_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirm_button.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.confirm_button.ForeColor = System.Drawing.SystemColors.ControlText;
             this.confirm_button.Location = new System.Drawing.Point(567, 24);
             this.confirm_button.Name = "confirm_button";
             this.confirm_button.Size = new System.Drawing.Size(197, 36);
@@ -72,28 +80,33 @@
             // 
             // prev
             // 
-            this.prev.Location = new System.Drawing.Point(567, 402);
+            this.prev.Location = new System.Drawing.Point(540, 458);
             this.prev.Name = "prev";
             this.prev.Size = new System.Drawing.Size(75, 23);
             this.prev.TabIndex = 12;
             this.prev.Text = "Previous";
             this.prev.UseVisualStyleBackColor = true;
             this.prev.Click += new System.EventHandler(this.Prev_Click);
+            this.prev.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Prev_KeyPress);
             // 
             // next
             // 
-            this.next.Location = new System.Drawing.Point(689, 402);
+            this.next.Location = new System.Drawing.Point(662, 458);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(75, 23);
             this.next.TabIndex = 13;
             this.next.Text = "Next";
             this.next.UseVisualStyleBackColor = true;
             this.next.Click += new System.EventHandler(this.Next_Click);
+            this.next.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Next_KeyPress);
             // 
             // pictureBox6
             // 
-            this.pictureBox6.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox6.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.ErrorImage")));
+            this.pictureBox6.InitialImage = null;
             this.pictureBox6.Location = new System.Drawing.Point(540, 279);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(197, 105);
@@ -104,8 +117,11 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox5.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.ErrorImage")));
+            this.pictureBox5.InitialImage = null;
             this.pictureBox5.Location = new System.Drawing.Point(290, 279);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(197, 105);
@@ -116,8 +132,11 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.ErrorImage")));
+            this.pictureBox4.InitialImage = null;
             this.pictureBox4.Location = new System.Drawing.Point(37, 279);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(197, 105);
@@ -128,8 +147,11 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.ErrorImage")));
+            this.pictureBox3.InitialImage = null;
             this.pictureBox3.Location = new System.Drawing.Point(540, 86);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(197, 105);
@@ -140,8 +162,11 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox2.BackgroundImage = global::Project_Blackhole.Properties.Resources.ban;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
+            this.pictureBox2.InitialImage = null;
             this.pictureBox2.Location = new System.Drawing.Point(290, 86);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(197, 105);
@@ -152,8 +177,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(37, 86);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(197, 105);
@@ -223,12 +251,43 @@
             this.pictureBox12.TabStop = false;
             this.pictureBox12.Visible = false;
             // 
+            // Email
+            // 
+            this.Email.BackColor = System.Drawing.SystemColors.Info;
+            this.Email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Email.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Email.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.Email.Location = new System.Drawing.Point(192, 27);
+            this.Email.MaxLength = 43;
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(369, 33);
+            this.Email.TabIndex = 0;
+            this.Email.WordWrap = false;
+            this.Email.TextChanged += new System.EventHandler(this.Email_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("新細明體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Location = new System.Drawing.Point(80, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 32);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Email: ";
+            // 
             // Choose
             // 
+            this.AcceptButton = this.confirm_button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::Project_Blackhole.Properties.Resources.summer_sunset_in_antarctica_PY4383Z;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(780, 558);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Email);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
@@ -262,6 +321,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -281,5 +341,7 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.Label label1;
     }
 }

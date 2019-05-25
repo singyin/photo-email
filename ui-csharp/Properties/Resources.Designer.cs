@@ -63,9 +63,49 @@ namespace Project_Blackhole.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap ban {
+            get {
+                object obj = ResourceManager.GetObject("ban", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap ban1 {
+            get {
+                object obj = ResourceManager.GetObject("ban1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap button_bg {
+            get {
+                object obj = ResourceManager.GetObject("button_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap Sing_Yin_Secondary_School__Choi_Wan__from_Choi_Hing_Road__19_5_2012 {
             get {
                 object obj = ResourceManager.GetObject("Sing_Yin_Secondary_School_(Choi_Wan)_from_Choi_Hing_Road_@19.5.2012", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap summer_sunset_in_antarctica_PY4383Z {
+            get {
+                object obj = ResourceManager.GetObject("summer-sunset-in-antarctica-PY4383Z", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

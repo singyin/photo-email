@@ -37,17 +37,17 @@ namespace Project_Blackhole
                 for (int i = 0; i < s.Length; i++) if ('0' > s[i] || s[i] > '9') return false;
                 return true;
             }
-            if (!Valid(id_from_input))
-            {
-                MessageBox.Show("The student ID you entered is invalid, please try again", "Invalid input");
-            }
-            else if (label1.Text == "                                                                      ")
+            if (label1.Text == "")
             {
                 MessageBox.Show("The Python interpretor path is empty! Please choose a valid path!", "Invalid input");
             }
+            else if (textBox1.Text == "")return;
+            else if (!Valid(id_from_input))
+            {
+                MessageBox.Show("The student ID you entered is invalid, please try again", "Invalid input");
+            }
             else 
             {
-                MessageBox.Show("You have already logged in!", "Succuss");
                 this.Hide();
                 new Choose(label1.Text+"/python.exe").Show();
             }
@@ -60,6 +60,16 @@ namespace Project_Blackhole
         }
 
         private void Label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
         {
 
         }
