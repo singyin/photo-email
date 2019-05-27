@@ -7,11 +7,11 @@ from oauth2client import client
 from oauth2client import tools
 from oauth2client.file import Storage
 
-try:
-    import argparse
-    flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
-except ImportError:
-    flags = None
+# try:
+#     # import argparse
+#     # flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
+# except ImportError:
+flags = None
 
 class auth:
     def __init__(self,SCOPES,CLIENT_SECRET_FILE, APPLICATION_NAME):

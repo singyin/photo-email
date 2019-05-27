@@ -44,6 +44,7 @@
 
 from __future__ import print_function
 import httplib2
+import sys
 import os
 
 from apiclient import discovery
@@ -51,17 +52,17 @@ from oauth2client import client
 from oauth2client import tools
 from oauth2client.file import Storage
 
-try:
-    import argparse
-    flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
-except ImportError:
-    flags = None
 
+# try:
+#     import argparse
+#     flags = argparse.ArgumentParser(parents=[]).parse_args()
+# except ImportError:
+#     flags = None
+flags=None
 import auth
 def get_labels():
     results = service.users().labels().list(userId='me').execute()
     labels = results.get('labels', [])
-
     if not labels:
         print('No labels found.')
     else:
@@ -80,12 +81,15 @@ service = discovery.build('gmail', 'v1', http=http)
 
 import send_email
 sender = "sy9711@syss.edu.hk"
-receiver = "sy9711@syss.edu.hk"
+# receiver = "sy9660@syss.edu.hk"
+receiver = sys.argv[2]
 subject = "Test"
 content = """
 
 """
-photo_list = [r'C:\Users\4E34TsengWaiYin\Desktop\New folder\1.jpg',r'C:\Users\4E34TsengWaiYin\Desktop\New folder\2.jpg',r'C:\Users\4E34TsengWaiYin\Desktop\New folder\3.jpg']
+#python main.py C:\FaceRecongnition\photo-email\ui-csharp\bin\SourcePic\__5.jpg sy9660@syss.edu.hk
+# photo_list = [r"C:\FaceRecongnition\photo-email\ui-csharp\bin\SourcePic\__5.jpg"]
+photo_list = sys.argv[1].split(';')
 sendInst = send_email.send_email(service)
 message = sendInst.create_message_with_attachment(sender,receiver,subject,content, photo_list)
 sendInst.send_message('me',message)

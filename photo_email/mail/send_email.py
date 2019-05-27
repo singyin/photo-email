@@ -14,12 +14,12 @@ from email.mime.image import MIMEImage
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 import mimetypes
-try:
-    import argparse
-    flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
-except ImportError:
-    flags = None
-
+# try:
+#     # import argparse
+#     # flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
+# except ImportError:
+#     flags = None
+flag=None
 class send_email:
     def __init__(self,service):
         self.service = service
