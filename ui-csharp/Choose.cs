@@ -27,7 +27,7 @@ namespace Project_Blackhole
             }
         }
         // For testing *** ( // before EXECUTING)
-        //string Path = "C:/Users/Administrator/AppData/Local/Programs/Python/Python36/python.exe";
+        string Path = "";
         //***
         List<string> Arr = new List<string>();
         bool[] SLT = new bool[1001];
@@ -93,7 +93,7 @@ namespace Project_Blackhole
         }
         public Choose(string s)
         {
-            //Path = s;
+            Path = s;
             InitializeComponent();
             GetMatchList();
             Ini();
