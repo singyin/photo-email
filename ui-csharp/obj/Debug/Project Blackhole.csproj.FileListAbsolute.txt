@@ -20,3 +20,14 @@ C:\Users\Administrator\source\repos\photo-email\ui-csharp\obj\Debug\Project Blac
 C:\Users\Administrator\source\repos\photo-email\ui-csharp\obj\Debug\Project Blackhole.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\source\repos\photo-email\ui-csharp\obj\Debug\Project Blackhole.exe
 C:\Users\Administrator\source\repos\photo-email\ui-csharp\obj\Debug\Project Blackhole.pdb
+C:\FaceRecongnition\photo-email\ui-csharp\bin\Debug\Project Blackhole.exe.config
+C:\FaceRecongnition\photo-email\ui-csharp\bin\Debug\Project Blackhole.exe
+C:\FaceRecongnition\photo-email\ui-csharp\bin\Debug\Project Blackhole.pdb
+C:\FaceRecongnition\photo-email\ui-csharp\obj\Debug\Project Blackhole.csprojAssemblyReference.cache
+C:\FaceRecongnition\photo-email\ui-csharp\obj\Debug\Project_Blackhole.Choose.resources
+C:\FaceRecongnition\photo-email\ui-csharp\obj\Debug\Project_Blackhole.main.resources
+C:\FaceRecongnition\photo-email\ui-csharp\obj\Debug\Project_Blackhole.Properties.Resources.resources
+C:\FaceRecongnition\photo-email\ui-csharp\obj\Debug\Project Blackhole.csproj.GenerateResource.cache
+C:\FaceRecongnition\photo-email\ui-csharp\obj\Debug\Project Blackhole.csproj.CoreCompileInputs.cache
+C:\FaceRecongnition\photo-email\ui-csharp\obj\Debug\Project Blackhole.exe
+C:\FaceRecongnition\photo-email\ui-csharp\obj\Debug\Project Blackhole.pdb
