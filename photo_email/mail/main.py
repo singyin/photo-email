@@ -87,9 +87,13 @@ subject = "Test"
 content = """
 
 """
-#python main.py C:\FaceRecongnition\photo-email\ui-csharp\bin\SourcePic\__5.jpg sy9660@syss.edu.hk
+# python main.py C:\FaceRecongnition\photo-email\ui-csharp\bin\SourcePic\__5.jpg sy9660@syss.edu.hk
 # photo_list = [r"C:\FaceRecongnition\photo-email\ui-csharp\bin\SourcePic\__5.jpg"]
-photo_list = sys.argv[1].split(';')
+photo_list=sys.argv[1].split(';')
+#print(photo_list)
+# for i in range(len(photo_list)):
+    # print(photo_list[i])
+    # photo_list[i]=photo_list[i].replace('\\','/')
 sendInst = send_email.send_email(service)
 message = sendInst.create_message_with_attachment(sender,receiver,subject,content, photo_list)
 sendInst.send_message('me',message)
