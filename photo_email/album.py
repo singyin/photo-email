@@ -8,7 +8,7 @@ from photo import photo
 
 class album:
     def __init__(self, folder_path):
-        self.name = folder_path.split('/')[-1]
+        self.name = folder_path.split('\\')[-1]
         self.path = folder_path
         self.photos = []
         self.process()
@@ -25,7 +25,8 @@ class album:
             self.photos.append(photo(os.path.join(self.path, img_path)))
 
     def save(self, path):
-        ofile = open(path + '/' + self.name + '_data', 'wb')
+        data_name = self.name + '_data'
+        ofile = open(os.path.join(path, data_name), 'wb')
         pickle.dump(self, ofile)
         ofile.close
 
