@@ -211,7 +211,10 @@ namespace Project_Blackhole
             MessageBox.Show("Email Sent!\nThanks for using the system!", "Notice");
             this.Hide();
         }
-
+        ~Choose()
+        {
+            Close();
+        }
         private void Email_TextChanged(object sender, EventArgs e)
         {
 
