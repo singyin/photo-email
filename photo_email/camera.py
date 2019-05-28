@@ -41,4 +41,4 @@ def take_photo_get_path_from(albumPath):
     for photo in alb.match(pht, 0.6):
         print(photo[0].path)
 
-take_photo_get_path_from_album('C:/FaceRecognition/photo-email/tests/photos/album/train_data');
+take_photo_get_path_from('C:/FaceRecognition/photoemail/tests/photos/album/train_data');

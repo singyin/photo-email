@@ -35,7 +35,7 @@ namespace Project_Blackhole
         void GetMatchList()
         {
             //Provide script path
-            string Pyname = "./../../../photo_email/album.py";
+            string Pyname = "./../../../photo_email/camera.py";
             //string Pyname = @"./../Testing_Python/testing2.py";
             //Create Process Info
             ProcessStartInfo StartInfo = new ProcessStartInfo(Path);
