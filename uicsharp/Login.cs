@@ -48,7 +48,6 @@ namespace Project_Blackhole
             }
             else 
             {
-                this.Hide();
                 new Choose(label1.Text+"/python.exe").Show();
             }
         }
