@@ -4,13 +4,11 @@ import face_recognition as fr
 from face import face
 from album import album
 
-
 def take_photo_get_path_from(albumPath):
-
     img = 0
     display = 0
 
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
     while(True):
         # Capture frame-by-frame
         ret, frame = cap.read()
@@ -23,14 +21,11 @@ def take_photo_get_path_from(albumPath):
         cv2.imshow('frame',display)
         key = cv2.waitKey(1)
 
-        if   key == ord('q') : break
+        if key == ord('q') : 
+            cap.release()
+            cv2.destroyAllWindows()
+            break
         elif key == ord('c') : img = frame
-        # When everything done, release the capture
-    cap.release()
-    cv2.destroyAllWindows()
-    cv2.imshow('image', img)
-    cv2.waitKey()
-    cv2.destroyAllWindows()
 
     location = fr.api.face_locations(img)
     encoding = fr.api.face_encodings(img, known_face_locations=location)
@@ -41,4 +36,4 @@ def take_photo_get_path_from(albumPath):
     for photo in alb.match(pht, 0.6):
         print(photo[0].path)
 
-take_photo_get_path_from('C:/FaceRecognition/photoemail/tests/photos/album/train_data');
+take_photo_get_path_from(r'C:\FaceRecognition\photo-email\tests\test_data\test_data_data');
