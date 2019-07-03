@@ -1,0 +1,10 @@
+C:\FaceRecongnition\photoemail\uipreloader\Preloader\Preloader\bin\Debug\Preloader.exe.config
+C:\FaceRecongnition\photoemail\uipreloader\Preloader\Preloader\bin\Debug\Preloader.exe
+C:\FaceRecongnition\photoemail\uipreloader\Preloader\Preloader\bin\Debug\Preloader.pdb
+C:\FaceRecongnition\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.csprojAssemblyReference.cache
+C:\FaceRecongnition\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.Form1.resources
+C:\FaceRecongnition\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.Properties.Resources.resources
+C:\FaceRecongnition\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.csproj.GenerateResource.cache
+C:\FaceRecongnition\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.csproj.CoreCompileInputs.cache
+C:\FaceRecongnition\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.exe
+C:\FaceRecongnition\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.pdb
