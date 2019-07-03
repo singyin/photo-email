@@ -11,6 +11,9 @@ def take_photo(albumPath):
     cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
     cv2.namedWindow('frame', cv2.WINDOW_NORMAL)
 
+    cv2.setWindowProperty('frame',cv2.WND_PROP_FULLSCREEN,cv2.WINDOW_FULLSCREEN)
+    cv2.setWindowProperty('frame',cv2.WND_PROP_FULLSCREEN,cv2.WINDOW_NORMAL)
+
     while(True):
         # Capture frame-by-frame
         ret, frame = cap.read()
@@ -35,7 +38,7 @@ def take_photo(albumPath):
 
     alb = album.load(albumPath)
 
-    # for photo in alb.match(pht, 0.6):
-    #     print(photo[0].path)
+    for photo in alb.match(pht, 0.6):
+        print(photo[0].path)
 
-take_photo_get_path_from(r'C:\FaceRecognition\photo-email\tests\test_data\test_data_data');
+take_photo(r'C:\FaceRecognition\photo-email\tests\test_data\test_data_data');
