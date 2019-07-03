@@ -9,7 +9,7 @@ from face import face
 class photo:
     def __init__(self, path):
         self.path  = path
-        self.name  = path.split('\\')[-1]
+        self.name  = path.split('/')[-1]
         self.faces = []
         self.process()
 
@@ -28,7 +28,7 @@ class photo:
 
     def save(self, path):
         data_name = self.name + '_data'
-        ofile = open(os.path.join(path, data_name), 'wb')
+        ofile = open(path+'/'+data_name, 'wb')
         pickle.dump(self, ofile)
         ofile.close
 

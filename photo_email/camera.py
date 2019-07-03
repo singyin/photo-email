@@ -21,7 +21,7 @@ def take_photo(albumPath):
         location = fr.api.face_locations(display)
         if len(location) > 0:
             for fc in location:
-                display = cv2.rectangle(display, (fc[3], fc[0]), (fc[1], fc[2]), (0,255,0), 5)
+                display = cv2.rectangle(display, (fc[3], fc[0]), (fc[1], fc[2]), (0,255,0), 4)
         
         cv2.imshow('frame',display)
         key = cv2.waitKey(1)
@@ -41,4 +41,4 @@ def take_photo(albumPath):
     for photo in alb.match(pht, 0.6):
         print(photo[0].path)
 
-take_photo(r'C:\FaceRecognition\photo-email\tests\test_data\test_data_data');
+take_photo('C:/FaceRecognition/photo-email/tests/test_data/test_data_data');
