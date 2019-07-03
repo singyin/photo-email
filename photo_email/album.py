@@ -8,7 +8,7 @@ from photo import photo
 
 class album:
     def __init__(self, folder_path):
-        self.name = folder_path.split('/')[-1]
+        self.name = folder_path.split('\\')[-1]
         self.path = folder_path
         self.photos = []
         self.process()
@@ -23,11 +23,11 @@ class album:
         img_paths = os.listdir(self.path)
         for img_path in img_paths:
             if img_path.lower().endswith(('.png', '.jpg', '.jpeg')):
-                self.photos.append(photo(self.path+'/'+img_path))
+                self.photos.append(photo(self.path+'\\'+img_path))
 
     def save(self):
         data_name = self.name + '_data'
-        ofile = open(self.path+'/'+data_name, 'wb')
+        ofile = open(self.path+'\\'+data_name, 'wb')
         pickle.dump(self, ofile)
         ofile.close
 
@@ -38,3 +38,4 @@ class album:
             if len(photo_matches) > 0:
                 matches.append((photo,photo_matches))
         return matches
+

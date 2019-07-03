@@ -83,7 +83,7 @@ import send_email
 sender = "sy9711@syss.edu.hk"
 # receiver = "sy9660@syss.edu.hk"
 receiver = sys.argv[2]
-subject = "Test"
+subject = "Photo Email Set"
 content = """
 
 """

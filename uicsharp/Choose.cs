@@ -34,6 +34,18 @@ namespace Project_Blackhole
         bool[] SLT = new bool[1001];
         void GetMatchList()
         {
+            string datapath="";
+            try
+            {   // Open the text file using a stream reader.
+                using (StreamReader sr = new StreamReader("temp.txt"))
+                {
+                    // Read the stream to a string, and write the string to the console.
+                    datapath = sr.ReadToEnd();
+                }
+            }
+            catch (IOException e)
+            {
+            }
             string output = "";
             string err = "";
             //Provide script path
@@ -41,7 +53,7 @@ namespace Project_Blackhole
             //string Pyname = @"./../Testing_Python/testing2.py";
             //Create Process Info
             ProcessStartInfo StartInfo = new ProcessStartInfo(Path);
-            StartInfo.Arguments = $"\"{Pyname}\"";
+            StartInfo.Arguments = $"\"{Pyname}\" "+datapath;
             //Config
             StartInfo.UseShellExecute = false;
             StartInfo.CreateNoWindow = true;

@@ -3,6 +3,7 @@ import cv2
 import face_recognition as fr
 from face import face
 from album import album
+import sys
 
 def take_photo(albumPath):
     img = 0
@@ -41,4 +42,6 @@ def take_photo(albumPath):
     for photo in alb.match(pht, 0.6):
         print(photo[0].path)
 
-take_photo('C:/FaceRecognition/photo-email/tests/test_data/test_data_data');
+
+path = sys.argv[1]
+take_photo(path)

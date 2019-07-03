@@ -60,7 +60,7 @@ namespace Preloader
                 err = pro.StandardError.ReadToEnd();
                 output = pro.StandardOutput.ReadToEnd();
             }
-            if (err == "")
+            if (err != "")
             {
                 MessageBox.Show("Oops... Something's wrong in the preloader.py, please check the validity of your folder!","ERROR");
                 Application.Exit();
@@ -71,6 +71,13 @@ namespace Preloader
             if (String.IsNullOrEmpty(path) || path== "                                                                                                                                                ") return;
             passArg(path);
             MessageBox.Show("Photos set is compiled! Thanks for using the system!");
+            using (FileStream fs = new FileStream("./temp.txt", FileMode.OpenOrCreate))
+            {
+                using (TextWriter tw = new StreamWriter(fs))
+                {
+                    tw.WriteLine(path);
+                }
+            }
             Application.Exit();
         }
 
