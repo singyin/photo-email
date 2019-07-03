@@ -34,6 +34,8 @@ namespace Project_Blackhole
         bool[] SLT = new bool[1001];
         void GetMatchList()
         {
+            string output = "";
+            string err = "";
             //Provide script path
             string Pyname = "./../../../photo_email/camera.py";
             //string Pyname = @"./../Testing_Python/testing2.py";
@@ -46,8 +48,6 @@ namespace Project_Blackhole
             StartInfo.RedirectStandardError = true;
             StartInfo.RedirectStandardOutput = true;
             //Execution
-            string output = "";
-            string err = "";
             using (Process pro = Process.Start(StartInfo))
             {
                 err = pro.StandardError.ReadToEnd();
@@ -67,6 +67,7 @@ namespace Project_Blackhole
                 }
             }
         }
+        string ID;
         void SendEmail(string list)
         {
             //Provide script path
@@ -98,9 +99,10 @@ namespace Project_Blackhole
         {
             for (int i = 0; i <= 1000; i++) SLT[i] = false;
         }
-        public Choose(string s)
+        public Choose(string s,string id)
         {
-            //Path = s;
+            Path = s;
+            ID = id;
             InitializeComponent();
             GetMatchList();
             Ini();
@@ -196,7 +198,7 @@ namespace Project_Blackhole
 
         private void Confirm_button_Click(object sender, EventArgs e)
         {
-            if (!IsValidEmail(Email.Text))
+            if (!IsValidEmail("sy"+ID+"@syss.edu.hk"))
             {
                 MessageBox.Show("It seems your email is invalid... Please try another email...", "Oops!");
                 return;
@@ -213,16 +215,8 @@ namespace Project_Blackhole
                 return;
             }
             Arg_Py = Arg_Py.Substring(0, Arg_Py.Length - 1);
-            SendEmail(Arg_Py + " " + Email.Text);
+            SendEmail(Arg_Py + " " + "sy" + ID + "@syss.edu.hk");
             MessageBox.Show("Email Sent!\nThanks for using the system!", "Notice");
-        }
-        ~Choose()
-        {
-            Close();
-        }
-        private void Email_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Next_KeyPress(object sender, KeyPressEventArgs e)
@@ -243,6 +237,11 @@ namespace Project_Blackhole
                 if (--cur == 0) prev.Hide();
                 Setbrowse(cur * 6);
             }
+        }
+
+        private void Choose_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

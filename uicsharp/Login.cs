@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,9 +38,13 @@ namespace Project_Blackhole
                 for (int i = 0; i < s.Length; i++) if ('0' > s[i] || s[i] > '9') return false;
                 return true;
             }
-            if (label1.Text == "")
+            if (label1.Text == "                                                                                                    ")
             {
                 MessageBox.Show("The Python interpretor path is empty! Please choose a valid path!", "Invalid input");
+            }
+            else if (!File.Exists(label1.Text + "/python.exe"))
+            {
+                MessageBox.Show("The Python interpretor path is invalid! Please choose a valid path!", "Invalid input");
             }
             else if (textBox1.Text == "")return;
             else if (!Valid(id_from_input))
@@ -49,14 +54,13 @@ namespace Project_Blackhole
             else 
             {
                 this.Hide();
-                new Choose(label1.Text+"/python.exe").Show();
+                new Choose(label1.Text+"/python.exe",id_from_input).Show();
             }
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
             folderBrowserDialog1.ShowDialog();
-            if (folderBrowserDialog1.SelectedPath == "") label1.Text = "\"                                                                                                    \"";
             label1.Text = folderBrowserDialog1.SelectedPath;
         }
 
@@ -73,6 +77,16 @@ namespace Project_Blackhole
         private void Label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Label1_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(label1.Text))label1.Text = "                                                                                                                          ";
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
