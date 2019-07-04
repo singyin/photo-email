@@ -103,6 +103,8 @@
     <Content Include="bin\Source Pic\IMG_3044.JPG" />
     <Content Include="bin\Source Pic\IMG_3102.JPG" />
     <Content Include="bin\Source Pic\IMG_4255.JPG" />
+    <None Include="bin\SourcePic\1180px-Checkmark_green.svg.png" />
+    <None Include="bin\SourcePic\Confirm Button BG.png" />
     <None Include="bin\SourcePic\arrowR.png" />
     <None Include="bin\SourcePic\arrowL.png" />
     <None Include="bin\SourcePic\Sing_Yin_Secondary_School_%28Choi_Wan%29_from_Choi_Hing_Road_%4019.5.2012.jpg" />

@@ -21,9 +21,6 @@ namespace Project_Blackhole
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Trace.Listeners.Add(new TextWriterTraceListener("../ErrorLog/errorlog"+DateTime.Now.ToString().Replace(' ','_')+".txt"));
-            Trace.AutoFlush = true;
-            Trace.Indent();
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -48,27 +45,35 @@ namespace Project_Blackhole
                 return;
             }
             bool default_valid = File.Exists("C:/Python37/python.exe");
-            if (default_valid)
+            if (label1.Text == "                                                                                                                          ")
             {
-                this.Hide();
-                if (File.Exists("C:/Python37/python.exe")) checked_path = "C:/Python37/python.exe";
-                new Choose(checked_path, id_from_input).Show();
-                return;
-            }
-            else if (!default_valid && label1.Text== "                                                                                                                          ")
-            {
-                MessageBox.Show("You have no python installed in the default path. Please choose a new path if you didn't install it in the default path!", "Python Interpretor Unavailable");
-                return;
-            }
-            else if (!default_valid && File.Exists(label1.Text+"/python.exe"))
-            {
-                MessageBox.Show("The python directory has no python.exe. Please confirm the directory has one.", "Python Interpretor Unavailable");
-                return;
+                if (!default_valid)
+                {
+                    MessageBox.Show("You have no python installed in the default path. Please choose a new path if you didn't install it in the default path!", "Python Interpretor Unavailable");
+                    return;
+                }
+                else
+                {
+                    checked_path = "C:/Python37/python.exe";
+                    this.Hide();
+                    new Choose(checked_path, id_from_input).Show();
+                    return;
+                }
             }
             else
             {
-                MessageBox.Show("Unknown error. Please check debug log for more infomation or choose a correct path.", "Unknown error.");
-                return;
+                if (!File.Exists(label1.Text + "/python.exe"))
+                {
+                    MessageBox.Show("The python directory has no python.exe. Please confirm the directory has one.", "Python Interpretor Unavailable");
+                    return;
+                }
+                else
+                {
+                    checked_path = "C:/Python37/python.exe";
+                    this.Hide();
+                    new Choose(checked_path, id_from_input).Show();
+                    return;
+                }
             }
         }
 
@@ -95,12 +100,15 @@ namespace Project_Blackhole
 
         private void Label1_TextChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(label1.Text))label1.Text = "                                                                                                                          ";
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Label1_TextChanged_1(object sender, EventArgs e)
+        {
         }
     }
 }

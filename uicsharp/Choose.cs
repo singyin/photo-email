@@ -26,10 +26,7 @@ namespace Project_Blackhole
                 return false;
             }
         }
-        // For testing *** ( // before EXECUTING)
-        //string Path = "";
         string Path = @"C:/Python37/python.exe";
-        //***
         List<string> Arr = new List<string>();
         bool[] SLT = new bool[1001];
         void GetMatchList()
@@ -71,6 +68,7 @@ namespace Project_Blackhole
                 if (output[i] == '\n')
                 {
                     Arr.Add(Buffer);
+                    Console.WriteLine(Buffer);
                     Buffer = "";
                 }
                 else
@@ -82,16 +80,8 @@ namespace Project_Blackhole
         string ID;
         void SendEmail(string list)
         {
-            //Provide script path
             string Pyname = @"./../../../photo_email/mail/main.py";
-            //string Pyname= "./../Testing_Python/testing2.py";
-            //Create Process Info
-            //Console.WriteLine(list);
-            //list = @"C:\FaceRecongnition\photoemail\uicsharp\bin\SourcePic\__8.jpg sy9660@syss.edu.hk";
-            //MessageBox.Show(list);
-            //Console.WriteLine(list);
-            //MessageBox.Show((Pyname + " " + list), "ERROR");
-            ProcessStartInfo StartInfo = new ProcessStartInfo(Path,Pyname + " " + list);
+            ProcessStartInfo StartInfo = new ProcessStartInfo(Path, Pyname + " " + list);
             //Config
             StartInfo.UseShellExecute = false;
             StartInfo.CreateNoWindow = true;
@@ -105,43 +95,96 @@ namespace Project_Blackhole
                 err = pro.StandardError.ReadToEnd();
                 output = pro.StandardOutput.ReadToEnd();
             }
-            //MessageBox.Show(err, "ERRER");
         }
         void Ini()
         {
             for (int i = 0; i <= 1000; i++) SLT[i] = false;
+
         }
-        public Choose(string s,string id)
+        public Choose(string s, string id)
         {
             Path = s;
             ID = id;
             InitializeComponent();
+            pictureBox1.Controls.Add(pictureBox7);
+            pictureBox2.Controls.Add(pictureBox8);
+            pictureBox3.Controls.Add(pictureBox9);
+            pictureBox4.Controls.Add(pictureBox10);
+            pictureBox5.Controls.Add(pictureBox11);
+            pictureBox6.Controls.Add(pictureBox12);
+            pictureBox7.Location = new Point(0, 0);
+            pictureBox8.Location = new Point(0, 0);
+            pictureBox9.Location = new Point(0, 0);
+            pictureBox10.Location = new Point(0, 0);
+            pictureBox11.Location = new Point(0, 0);
+            pictureBox12.Location = new Point(0, 0);
+            pictureBox7.BackColor = Color.Transparent;
+            pictureBox8.BackColor = Color.Transparent;
+            pictureBox9.BackColor = Color.Transparent;
+            pictureBox10.BackColor = Color.Transparent;
+            pictureBox11.BackColor = Color.Transparent;
+            pictureBox12.BackColor = Color.Transparent;
+            pictureBox7.BackColor = Color.Transparent;
             GetMatchList();
             Ini();
         }
         int cur = 0;
+        Image ban_image = new Bitmap("./../SourcePic/unavailable.png");
         void Setbrowse(int from)
         {
-            if (from < Arr.Count) pictureBox1.ImageLocation = Arr[from]; else pictureBox1.ImageLocation = "./../SourcePic/unavailable.png";
+            if (from < Arr.Count) pictureBox1.ImageLocation = Arr[from];
+            else
+            {
+                pictureBox1.BackgroundImage = ban_image;
+                pictureBox1.ImageLocation = null;
+            }
             if (!SLT[from]) pictureBox7.Hide(); else pictureBox7.Show();
-            if (from+1 < Arr.Count) pictureBox2.ImageLocation = Arr[from+1]; else pictureBox2.ImageLocation = "./../SourcePic/unavailable.png";
-            if (!SLT[from+1]) pictureBox8.Hide(); else pictureBox8.Show();
-            if (from+2 < Arr.Count) pictureBox3.ImageLocation = Arr[from+2]; else pictureBox3.ImageLocation = "./../SourcePic/unavailable.png";
-            if (!SLT[from+2]) pictureBox9.Hide(); else pictureBox9.Show();
-            if (from+3 < Arr.Count) pictureBox4.ImageLocation = Arr[from+3]; else pictureBox4.ImageLocation = "./../SourcePic/unavailable.png";
-            if (!SLT[from+3]) pictureBox10.Hide(); else pictureBox10.Show();
-            if (from+4 < Arr.Count) pictureBox5.ImageLocation = Arr[from+4]; else pictureBox5.ImageLocation = "./../SourcePic/unavailable.png";
-            if (!SLT[from+4]) pictureBox11.Hide(); else pictureBox11.Show();
-            if (from+5 < Arr.Count) pictureBox6.ImageLocation = Arr[from+5]; else pictureBox6.ImageLocation = "./../SourcePic/unavailable.png";
-            if (!SLT[from+5]) pictureBox12.Hide(); else pictureBox12.Show();
+            if (from + 1 < Arr.Count) pictureBox2.ImageLocation = Arr[from + 1];
+            else
+            {
+                pictureBox2.BackgroundImage = ban_image;
+                pictureBox2.ImageLocation = null;
+            }
+            if (!SLT[from + 1]) pictureBox8.Hide(); else pictureBox8.Show();
+            if (from + 2 < Arr.Count) pictureBox3.ImageLocation = Arr[from + 2];
+            else
+            {
+                pictureBox3.BackgroundImage = ban_image;
+                pictureBox3.ImageLocation = null;
+            }
+            if (!SLT[from + 2]) pictureBox9.Hide(); else pictureBox9.Show();
+            if (from + 3 < Arr.Count) pictureBox4.ImageLocation = Arr[from + 3];
+            else
+            {
+                pictureBox4.BackgroundImage = ban_image;
+                pictureBox4.ImageLocation = null;
+            }
+            if (!SLT[from + 3]) pictureBox10.Hide(); else pictureBox10.Show();
+            if (from + 4 < Arr.Count) pictureBox5.ImageLocation = Arr[from + 4];
+            else
+            {
+                pictureBox5.BackgroundImage = ban_image;
+                pictureBox5.ImageLocation = null;
+            }
+            if (!SLT[from + 4]) pictureBox11.Hide(); else pictureBox11.Show();
+            if (from + 5 < Arr.Count) pictureBox6.ImageLocation = Arr[from + 5];
+            else
+            {
+                pictureBox6.BackgroundImage = ban_image;
+                pictureBox6.ImageLocation = null;
+            }
+            if (!SLT[from + 5]) pictureBox12.Hide(); else pictureBox12.Show();
         }
         private void Choose_Load(object sender, EventArgs e)
         {
+            confirm_button.FlatStyle = FlatStyle.Flat;
+            confirm_button.FlatAppearance.BorderSize = 0;
             pictureBox1.SizeMode = pictureBox2.SizeMode = pictureBox3.SizeMode = pictureBox4.SizeMode = pictureBox5.SizeMode = pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             Setbrowse(0);
             prev.Hide();
             if (Arr.Count <= 6) next.Hide();
         }
+        Image tick_image = new Bitmap("../SourcePic/Big_Tick.png");
         private void PictureBox1_Click(object sender, EventArgs e)
         {
             if (cur * 6 >= Arr.Count) return;
@@ -174,8 +217,8 @@ namespace Project_Blackhole
         }
 
         private void PictureBox5_Click(object sender, EventArgs e)
-        { 
-            if (cur* 6 + 4 >= Arr.Count) return;
+        {
+            if (cur * 6 + 4 >= Arr.Count) return;
             SLT[cur * 6 + 4] ^= true;
             if (SLT[cur * 6 + 4]) pictureBox11.Show();
             else pictureBox11.Hide();
@@ -199,27 +242,21 @@ namespace Project_Blackhole
         private void Next_Click(object sender, EventArgs e)
         {
             prev.Show();
-            if ((++cur+1)*6 >= Arr.Count) next.Hide();
+            if ((++cur + 1) * 6 >= Arr.Count) next.Hide();
             Setbrowse(cur * 6);
-        }
-
-        private void PictureBox7_Click(object sender, EventArgs e)
-        {
-            //ignore
         }
 
         private void Confirm_button_Click(object sender, EventArgs e)
         {
-            if (!IsValidEmail("sy"+ID+"@syss.edu.hk"))
+            if (!IsValidEmail("sy" + ID + "@syss.edu.hk"))
             {
                 MessageBox.Show("It seems your email is invalid... Please try another email...", "Oops!");
                 return;
             }
-            string Arg_Py="";
+            string Arg_Py = "";
             for (int i = 0; i < Arr.Count; i++)
             {
-                if (SLT[i]) Arg_Py += Arr[i].Substring(0,Arr[i].Length-1) + ";";
-                //Console.WriteLine(Arg_Py);
+                if (SLT[i]) Arg_Py += Arr[i].Substring(0, Arr[i].Length - 1) + ";";
             }
             if (Arg_Py.Length <= 0)
             {
@@ -254,6 +291,54 @@ namespace Project_Blackhole
         private void Choose_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void PictureBox10_Click(object sender, EventArgs e)
+        {
+            if (cur * 6 + 3 >= Arr.Count) return;
+            SLT[cur * 6 + 3] ^= true;
+            if (SLT[cur * 6 + 3]) pictureBox10.Show();
+            else pictureBox10.Hide();
+        }
+        private void PictureBox9_Click(object sender, EventArgs e)
+        {
+            if (cur * 6 + 2 >= Arr.Count) return;
+            SLT[cur * 6 + 2] ^= true;
+            if (SLT[cur * 6 + 2]) pictureBox9.Show();
+            else pictureBox9.Hide();
+        }
+
+        private void PictureBox7_Click(object sender, EventArgs e)
+        {
+
+            if (cur * 6 >= Arr.Count) return;
+            SLT[cur * 6] ^= true;
+            if (SLT[cur * 6]) pictureBox7.Show();
+            else pictureBox7.Hide();
+        }
+
+        private void PictureBox8_Click(object sender, EventArgs e)
+        {
+            if (cur * 6 + 1 >= Arr.Count) return;
+            SLT[cur * 6 + 1] ^= true;
+            if (SLT[cur * 6 + 1]) pictureBox8.Show();
+            else pictureBox8.Hide();
+        }
+
+        private void PictureBox11_Click(object sender, EventArgs e)
+        {
+            if (cur * 6 + 4 >= Arr.Count) return;
+            SLT[cur * 6 + 4] ^= true;
+            if (SLT[cur * 6 + 4]) pictureBox11.Show();
+            else pictureBox11.Hide();
+        }
+
+        private void PictureBox12_Click(object sender, EventArgs e)
+        {
+            if (cur * 6 + 5 >= Arr.Count) return;
+            SLT[cur * 6 + 5] ^= true;
+            if (SLT[cur * 6 + 5]) pictureBox12.Show();
+            else pictureBox12.Hide();
         }
     }
 }
