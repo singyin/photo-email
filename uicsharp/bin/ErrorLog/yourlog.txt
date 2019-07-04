@@ -1,0 +1,12 @@
+    4/7/2019 10:08:06 Error Log
+    ************************************************************
+    
+
+The selected path : "C:\Users\Administrator\Desktop\ojkhkwwguoz2.rar_files"
+    The student ID : 12345
+    
+
+Please note that you should choose a directory with a "python.exe" in it.
+    
+
+    ************************************************************

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,9 @@ namespace Project_Blackhole
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Trace.Listeners.Add(new TextWriterTraceListener("../ErrorLog/errorlog"+DateTime.Now.ToString().Replace(' ','_')+".txt"));
+            Trace.AutoFlush = true;
+            Trace.Indent();
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -38,23 +41,34 @@ namespace Project_Blackhole
                 for (int i = 0; i < s.Length; i++) if ('0' > s[i] || s[i] > '9') return false;
                 return true;
             }
-            if (label1.Text == "                                                                                                    ")
-            {
-                MessageBox.Show("The Python interpretor path is empty! Please choose a valid path!", "Invalid input");
-            }
-            else if (!File.Exists(label1.Text + "/python.exe"))
-            {
-                MessageBox.Show("The Python interpretor path is invalid! Please choose a valid path!", "Invalid input");
-            }
-            else if (textBox1.Text == "")return;
-            else if (!Valid(id_from_input))
+            string checked_path="";
+            if (!Valid(id_from_input))
             {
                 MessageBox.Show("The student ID you entered is invalid, please try again", "Invalid input");
+                return;
             }
-            else 
+            bool default_valid = File.Exists("C:/Python37/python.exe");
+            if (default_valid)
             {
                 this.Hide();
-                new Choose(label1.Text+"/python.exe",id_from_input).Show();
+                if (File.Exists("C:/Python37/python.exe")) checked_path = "C:/Python37/python.exe";
+                new Choose(checked_path, id_from_input).Show();
+                return;
+            }
+            else if (!default_valid && label1.Text== "                                                                                                                          ")
+            {
+                MessageBox.Show("You have no python installed in the default path. Please choose a new path if you didn't install it in the default path!", "Python Interpretor Unavailable");
+                return;
+            }
+            else if (!default_valid && File.Exists(label1.Text+"/python.exe"))
+            {
+                MessageBox.Show("The python directory has no python.exe. Please confirm the directory has one.", "Python Interpretor Unavailable");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Unknown error. Please check debug log for more infomation or choose a correct path.", "Unknown error.");
+                return;
             }
         }
 
