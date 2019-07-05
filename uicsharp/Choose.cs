@@ -62,13 +62,14 @@ namespace Project_Blackhole
                 err = pro.StandardError.ReadToEnd();
                 output = pro.StandardOutput.ReadToEnd();
             }
+            //string output = "../SourcePic/__1.jpg\n../SourcePic/__2.jpg\n../SourcePic/__3.jpg\n../SourcePic/__4.jpg\n../SourcePic/__5.jpg\n../SourcePic/__6.jpg\n../SourcePic/__7.jpg\n../SourcePic/__8.jpg\n";
             string Buffer = "";
             for (int i = 0; i < output.Length; i++)
             {
                 if (output[i] == '\n')
                 {
                     Arr.Add(Buffer);
-                    Console.WriteLine(Buffer);
+                    //Console.WriteLine(Buffer);
                     Buffer = "";
                 }
                 else
@@ -107,24 +108,23 @@ namespace Project_Blackhole
             ID = id;
             InitializeComponent();
             pictureBox1.Controls.Add(pictureBox7);
-            pictureBox2.Controls.Add(pictureBox8);
-            pictureBox3.Controls.Add(pictureBox9);
-            pictureBox4.Controls.Add(pictureBox10);
-            pictureBox5.Controls.Add(pictureBox11);
-            pictureBox6.Controls.Add(pictureBox12);
+            pictureBox7.BackColor = Color.Transparent;
             pictureBox7.Location = new Point(0, 0);
-            pictureBox8.Location = new Point(0, 0);
-            pictureBox9.Location = new Point(0, 0);
-            pictureBox10.Location = new Point(0, 0);
-            pictureBox11.Location = new Point(0, 0);
-            pictureBox12.Location = new Point(0, 0);
-            pictureBox7.BackColor = Color.Transparent;
+            pictureBox2.Controls.Add(pictureBox8);
             pictureBox8.BackColor = Color.Transparent;
+            pictureBox8.Location = new Point(0, 0);
+            pictureBox3.Controls.Add(pictureBox9);
             pictureBox9.BackColor = Color.Transparent;
+            pictureBox9.Location = new Point(0, 0);
+            pictureBox4.Controls.Add(pictureBox10);
             pictureBox10.BackColor = Color.Transparent;
+            pictureBox10.Location = new Point(0, 0);
+            pictureBox5.Controls.Add(pictureBox11);
             pictureBox11.BackColor = Color.Transparent;
+            pictureBox11.Location = new Point(0, 0);
+            pictureBox6.Controls.Add(pictureBox12);
             pictureBox12.BackColor = Color.Transparent;
-            pictureBox7.BackColor = Color.Transparent;
+            pictureBox12.Location = new Point(0, 0);
             GetMatchList();
             Ini();
         }
@@ -293,21 +293,6 @@ namespace Project_Blackhole
             Application.Exit();
         }
 
-        private void PictureBox10_Click(object sender, EventArgs e)
-        {
-            if (cur * 6 + 3 >= Arr.Count) return;
-            SLT[cur * 6 + 3] ^= true;
-            if (SLT[cur * 6 + 3]) pictureBox10.Show();
-            else pictureBox10.Hide();
-        }
-        private void PictureBox9_Click(object sender, EventArgs e)
-        {
-            if (cur * 6 + 2 >= Arr.Count) return;
-            SLT[cur * 6 + 2] ^= true;
-            if (SLT[cur * 6 + 2]) pictureBox9.Show();
-            else pictureBox9.Hide();
-        }
-
         private void PictureBox7_Click(object sender, EventArgs e)
         {
 
@@ -316,7 +301,6 @@ namespace Project_Blackhole
             if (SLT[cur * 6]) pictureBox7.Show();
             else pictureBox7.Hide();
         }
-
         private void PictureBox8_Click(object sender, EventArgs e)
         {
             if (cur * 6 + 1 >= Arr.Count) return;
@@ -324,7 +308,20 @@ namespace Project_Blackhole
             if (SLT[cur * 6 + 1]) pictureBox8.Show();
             else pictureBox8.Hide();
         }
-
+        private void PictureBox9_Click(object sender, EventArgs e)
+        {
+            if (cur * 6 + 2 >= Arr.Count) return;
+            SLT[cur * 6 + 2] ^= true;
+            if (SLT[cur * 6 + 2]) pictureBox9.Show();
+            else pictureBox9.Hide();
+        }
+        private void PictureBox10_Click(object sender, EventArgs e)
+        {
+            if (cur * 6 + 3 >= Arr.Count) return;
+            SLT[cur * 6 + 3] ^= true;
+            if (SLT[cur * 6 + 3]) pictureBox10.Show();
+            else pictureBox10.Hide();
+        }
         private void PictureBox11_Click(object sender, EventArgs e)
         {
             if (cur * 6 + 4 >= Arr.Count) return;
@@ -340,5 +337,12 @@ namespace Project_Blackhole
             if (SLT[cur * 6 + 5]) pictureBox12.Show();
             else pictureBox12.Hide();
         }
+
+        private void PictureBox7_Click_1(object sender, EventArgs e){PictureBox7_Click(sender, e);}
+        private void PictureBox8_Click_1(object sender, EventArgs e){PictureBox8_Click(sender, e);}
+        private void PictureBox9_Click_1(object sender, EventArgs e){PictureBox9_Click(sender, e);}
+        private void PictureBox10_Click_1(object sender, EventArgs e){PictureBox10_Click(sender, e);}
+        private void PictureBox11_Click_1(object sender, EventArgs e){PictureBox11_Click(sender, e);}
+        private void PictureBox12_Click_1(object sender, EventArgs e){PictureBox12_Click(sender, e);}
     }
 }

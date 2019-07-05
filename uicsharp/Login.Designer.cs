@@ -43,7 +43,7 @@ namespace Project_Blackhole
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(457, 426);
+            this.textBox1.Location = new System.Drawing.Point(474, 273);
             this.textBox1.MaximumSize = new System.Drawing.Size(300, 300);
             this.textBox1.MaxLength = 5;
             this.textBox1.Name = "textBox1";
@@ -64,9 +64,9 @@ namespace Project_Blackhole
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(574, 476);
+            this.button1.Location = new System.Drawing.Point(591, 323);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 45);
+            this.button1.Size = new System.Drawing.Size(145, 44);
             this.button1.TabIndex = 2;
             this.button1.Text = "Enter";
             this.button1.UseVisualStyleBackColor = false;
@@ -78,7 +78,7 @@ namespace Project_Blackhole
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(273, 420);
+            this.label2.Location = new System.Drawing.Point(290, 267);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(178, 31);
             this.label2.TabIndex = 4;
@@ -118,7 +118,7 @@ namespace Project_Blackhole
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Project_Blackhole.Properties.Resources.Sing_Yin_Secondary_School__Choi_Wan__from_Choi_Hing_Road__19_51;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(784, 412);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
