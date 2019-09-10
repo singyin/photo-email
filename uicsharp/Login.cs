@@ -21,6 +21,22 @@ namespace Project_Blackhole
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            /*
+            string defpath="";
+            try
+            {   // Open the text file using a stream reader.
+                using (StreamReader sr = new StreamReader("default_python_path.txt"))
+                {
+                    // Read the stream to a string, and write the string to the console.
+                    defpath = sr.ReadToEnd();
+                }
+            }
+            catch (IOException e)
+            {
+            }
+            label1.Text = defpath;
+            */
+            label1.Text = @"C:/Python37";
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -44,7 +60,7 @@ namespace Project_Blackhole
                 MessageBox.Show("The student ID you entered is invalid, please try again", "Invalid input");
                 return;
             }
-            bool default_valid = File.Exists("C:/Python37/python.exe");
+            bool default_valid = File.Exists(@"C:/Python37/python.exe");
             if (label1.Text == "                                                                                                                          ")
             {
                 if (!default_valid)

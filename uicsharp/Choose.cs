@@ -34,7 +34,7 @@ namespace Project_Blackhole
             string datapath="";
             try
             {   // Open the text file using a stream reader.
-                using (StreamReader sr = new StreamReader("temp.txt"))
+                using (StreamReader sr = new StreamReader("photo_collection_path.txt"))
                 {
                     // Read the stream to a string, and write the string to the console.
                     datapath = sr.ReadToEnd();
@@ -62,6 +62,7 @@ namespace Project_Blackhole
                 err = pro.StandardError.ReadToEnd();
                 output = pro.StandardOutput.ReadToEnd();
             }
+            //Console.WriteLine(output);
             //string output = "../SourcePic/__1.jpg\n../SourcePic/__2.jpg\n../SourcePic/__3.jpg\n../SourcePic/__4.jpg\n../SourcePic/__5.jpg\n../SourcePic/__6.jpg\n../SourcePic/__7.jpg\n../SourcePic/__8.jpg\n";
             string Buffer = "";
             for (int i = 0; i < output.Length; i++)
