@@ -26,7 +26,7 @@ namespace Project_Blackhole
                 return false;
             }
         }
-        string Path = @"C:/Python37/python.exe";
+        string Path = "";
         List<string> Arr = new List<string>();
         bool[] SLT = new bool[1001];
         void GetMatchList()
@@ -34,7 +34,7 @@ namespace Project_Blackhole
             string datapath="";
             try
             {   // Open the text file using a stream reader.
-                using (StreamReader sr = new StreamReader("photo_collection_path.txt"))
+                using (StreamReader sr = new StreamReader("./../../../var/photo_collection_path.txt"))
                 {
                     // Read the stream to a string, and write the string to the console.
                     datapath = sr.ReadToEnd();
@@ -345,5 +345,50 @@ namespace Project_Blackhole
         private void PictureBox10_Click_1(object sender, EventArgs e){PictureBox10_Click(sender, e);}
         private void PictureBox11_Click_1(object sender, EventArgs e){PictureBox11_Click(sender, e);}
         private void PictureBox12_Click_1(object sender, EventArgs e){PictureBox12_Click(sender, e);}
+
+        private void PictureBox7_MouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
+
+
+        private void PictureBox7_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox8_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox9_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox10_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox11_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox12_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            if (cur * 6 + 0 >= Arr.Count) return;
+        }
+
+        private void PictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+        }
     }
 }

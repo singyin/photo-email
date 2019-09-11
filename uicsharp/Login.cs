@@ -19,24 +19,35 @@ namespace Project_Blackhole
         {
             InitializeComponent();
         }
+        public string data_path = "";
+        public string python_path = "";
         private void Form1_Load(object sender, EventArgs e)
         {
-            /*
-            string defpath="";
             try
             {   // Open the text file using a stream reader.
-                using (StreamReader sr = new StreamReader("default_python_path.txt"))
+                using (StreamReader sr = new StreamReader("./../../../var/photo_collection_path.txt"))
                 {
                     // Read the stream to a string, and write the string to the console.
-                    defpath = sr.ReadToEnd();
+                    data_path = sr.ReadToEnd();
                 }
             }
-            catch (IOException e)
+            catch (IOException p)
             {
+                data_path = "";
             }
-            label1.Text = defpath;
-            */
-            label1.Text = @"C:/Python37";
+            try
+            {   // Open the text file using a stream reader.
+                using (StreamReader sr = new StreamReader("./../../../var/default_python_path.txt"))
+                {
+                    // Read the stream to a string, and write the string to the console.
+                    python_path = sr.ReadToEnd();
+                }
+            }
+            catch (IOException p)
+            {
+                python_path = "";
+            }
+            label1.Text = python_path;
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -49,6 +60,11 @@ namespace Project_Blackhole
         }
         private void Button1_Click(object sender, EventArgs e)
         {
+            if (!File.Exists(data_path))
+            {
+                MessageBox.Show("You have no face data in the default path ("+data_path+"). Please make sure you have run preloader to calculate the face encodings.", "Face Data Unavailable");
+                return;
+            }
             bool Valid(string s)
             {
                 for (int i = 0; i < s.Length; i++) if ('0' > s[i] || s[i] > '9') return false;
@@ -60,36 +76,19 @@ namespace Project_Blackhole
                 MessageBox.Show("The student ID you entered is invalid, please try again", "Invalid input");
                 return;
             }
-            bool default_valid = File.Exists(@"C:/Python37/python.exe");
-            if (label1.Text == "                                                                                                                          ")
+            bool default_valid = File.Exists(python_path + "/python.exe");
+            if (!File.Exists(label1.Text + "/python.exe"))
             {
-                if (!default_valid)
-                {
-                    MessageBox.Show("You have no python installed in the default path. Please choose a new path if you didn't install it in the default path!", "Python Interpretor Unavailable");
-                    return;
-                }
-                else
-                {
-                    checked_path = "C:/Python37/python.exe";
-                    this.Hide();
-                    new Choose(checked_path, id_from_input).Show();
-                    return;
-                }
+                MessageBox.Show("The python directory has no python.exe. Please confirm the directory has one.", "Python Interpretor Unavailable");
+                return;
             }
             else
             {
-                if (!File.Exists(label1.Text + "/python.exe"))
-                {
-                    MessageBox.Show("The python directory has no python.exe. Please confirm the directory has one.", "Python Interpretor Unavailable");
-                    return;
-                }
-                else
-                {
-                    checked_path = "C:/Python37/python.exe";
-                    this.Hide();
-                    new Choose(checked_path, id_from_input).Show();
-                    return;
-                }
+                checked_path = python_path + "/python.exe";
+                Console.WriteLine(python_path + "/python.exe");
+                this.Hide();
+                new Choose(checked_path, id_from_input).Show();
+                return;
             }
         }
 

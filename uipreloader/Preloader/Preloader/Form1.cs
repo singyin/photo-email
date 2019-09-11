@@ -68,7 +68,11 @@ namespace Preloader
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(path) || path== "                                                                                                                                                ") return;
+            if (String.IsNullOrEmpty(path) || !File.Exists(label1.Text))
+            {
+                MessageBox.Show("The path you provide is incorrect","Alert");
+                return;
+            }
             passArg(path);
             MessageBox.Show("Photos set is compiled! Thanks for using the system!");
             using (FileStream fs = new FileStream("./temp.txt", FileMode.OpenOrCreate))

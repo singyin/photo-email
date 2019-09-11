@@ -1,1 +1,0 @@
-C:\FaceRecognition\photo-email\tests\test_data\test_data_data
