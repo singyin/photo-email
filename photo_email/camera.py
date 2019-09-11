@@ -39,7 +39,7 @@ def take_photo(albumPath):
 
     alb = album.load(albumPath)
 
-    for photo in alb.match(pht, 0.5):
+    for photo in alb.match(pht, 0.55):
         print(photo[0].path)
 
 

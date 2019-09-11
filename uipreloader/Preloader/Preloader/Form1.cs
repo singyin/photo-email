@@ -34,7 +34,7 @@ namespace Preloader
         {
             if (String.IsNullOrEmpty(label1.Text))
             {
-                label1.Text = "                                                                                                                                                ";
+                label1.Text = "";
             }
         }
         string path;
@@ -68,7 +68,7 @@ namespace Preloader
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(path) || !File.Exists(label1.Text))
+            if (String.IsNullOrEmpty(path) || !File.Exists(path))
             {
                 MessageBox.Show("The path you provide is incorrect","Alert");
                 return;
