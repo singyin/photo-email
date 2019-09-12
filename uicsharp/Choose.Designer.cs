@@ -61,18 +61,18 @@
             // confirm_button
             // 
             this.confirm_button.BackColor = System.Drawing.Color.Transparent;
-            this.confirm_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.confirm_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.confirm_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.confirm_button.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.confirm_button.FlatAppearance.BorderSize = 0;
             this.confirm_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.confirm_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.confirm_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confirm_button.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirm_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.confirm_button.Image = ((System.Drawing.Image)(resources.GetObject("confirm_button.Image")));
-            this.confirm_button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.confirm_button.Location = new System.Drawing.Point(1029, 611);
             this.confirm_button.Name = "confirm_button";
-            this.confirm_button.Size = new System.Drawing.Size(205, 65);
+            this.confirm_button.Size = new System.Drawing.Size(185, 65);
             this.confirm_button.TabIndex = 11;
             this.confirm_button.UseVisualStyleBackColor = false;
             this.confirm_button.Click += new System.EventHandler(this.Confirm_button_Click);
@@ -83,6 +83,7 @@
             this.prev.BackgroundImage = global::Project_Blackhole.Properties.Resources.arrowL;
             this.prev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.prev.FlatAppearance.BorderSize = 0;
+            this.prev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prev.ForeColor = System.Drawing.Color.Transparent;
             this.prev.Location = new System.Drawing.Point(12, 260);
             this.prev.Name = "prev";
@@ -98,6 +99,7 @@
             this.next.BackgroundImage = global::Project_Blackhole.Properties.Resources.arrowR;
             this.next.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.next.FlatAppearance.BorderSize = 0;
+            this.next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.next.Location = new System.Drawing.Point(1183, 260);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(65, 65);
