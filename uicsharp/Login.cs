@@ -24,10 +24,9 @@ namespace Project_Blackhole
         private void Form1_Load(object sender, EventArgs e)
         {
             try
-            {   // Open the text file using a stream reader.
+            {
                 using (StreamReader sr = new StreamReader("./../../../var/photo_collection_path.txt"))
                 {
-                    // Read the stream to a string, and write the string to the console.
                     data_path = sr.ReadToEnd();
                 }
             }
@@ -36,10 +35,8 @@ namespace Project_Blackhole
                 data_path = "";
             }
             try
-            {   // Open the text file using a stream reader.
                 using (StreamReader sr = new StreamReader("./../../../var/default_python_path.txt"))
                 {
-                    // Read the stream to a string, and write the string to the console.
                     python_path = sr.ReadToEnd();
                 }
             }

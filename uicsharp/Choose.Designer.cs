@@ -44,6 +44,7 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -56,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // confirm_button
@@ -303,6 +305,16 @@
             this.pictureBox1.MouseEnter += new System.EventHandler(this.PictureBox1_MouseEnter);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.PictureBox1_MouseLeave);
             // 
+            // trackBar1
+            // 
+            this.trackBar1.BackColor = System.Drawing.Color.Gray;
+            this.trackBar1.Location = new System.Drawing.Point(121, 593);
+            this.trackBar1.Maximum = 20;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(203, 45);
+            this.trackBar1.TabIndex = 39;
+            this.trackBar1.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
+            // 
             // Choose
             // 
             this.AcceptButton = this.confirm_button;
@@ -312,6 +324,7 @@
             this.BackgroundImage = global::Project_Blackhole.Properties.Resources.Sing_Yin_Secondary_School__Choi_Wan__from_Choi_Hing_Road__19_51;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1260, 735);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox8);
@@ -346,7 +359,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -366,5 +381,6 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }

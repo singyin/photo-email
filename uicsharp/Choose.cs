@@ -28,6 +28,7 @@ namespace Project_Blackhole
         }
         string Path = "";
         List<string> Arr = new List<string>();
+        List<double> Val = new List<double>();
         bool[] SLT = new bool[1001];
         void GetMatchList()
         {
@@ -67,10 +68,14 @@ namespace Project_Blackhole
             string Buffer = "";
             for (int i = 0; i < output.Length; i++)
             {
-                if (output[i] == '\n')
+                if (output[i] == ' ')
                 {
                     Arr.Add(Buffer);
-                    //Console.WriteLine(Buffer);
+                    Buffer = "";
+                }
+                else if (output[i] == '\n')
+                {
+                    Val.Add(Double.Parse(Buffer));
                     Buffer = "";
                 }
                 else
@@ -389,6 +394,11 @@ namespace Project_Blackhole
 
         private void PictureBox1_MouseLeave(object sender, EventArgs e)
         {
+        }
+
+        private void TrackBar1_Scroll(object sender, EventArgs e)
+        {
+
         }
     }
 }
