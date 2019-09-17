@@ -1,0 +1,18 @@
+************************************************************************************************************************************************
+
+Please do not edit the file name of the other 2 files. 
+But if you accidentally edited any of them, please create it with the name "default_python_path.txt" and "photo_collection_path.txt".
+
+************************************************************************************************************************************************
+
+
+
+"default_python_path.txt" : containing the default python interpretor path (EXCLUDING the python.exe itself    e.g. "C:/User/Python37")
+
+"photo_collection_path.txt" : containing the preloaded data path (INCLUDING the data file itself    e.g. "C:/User/Document/the_file")
+
+
+
+P.S. 
+	1. All file paths should only contain '/' but not '\'. 
+	2. With no space in paths.
