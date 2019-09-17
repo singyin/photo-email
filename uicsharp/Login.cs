@@ -25,7 +25,7 @@ namespace Project_Blackhole
         {
             try
             {
-                using (StreamReader sr = new StreamReader("./../../../var/photo_collection_path.txt"))
+                using (StreamReader sr = new StreamReader("./../../../paths/photo_collection_path.txt"))
                 {
                     data_path = sr.ReadToEnd();
                 }
@@ -35,7 +35,8 @@ namespace Project_Blackhole
                 data_path = "";
             }
             try
-                using (StreamReader sr = new StreamReader("./../../../var/default_python_path.txt"))
+            {
+                using (StreamReader sr = new StreamReader("./../../../paths/default_python_path.txt"))
                 {
                     python_path = sr.ReadToEnd();
                 }

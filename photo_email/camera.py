@@ -38,7 +38,7 @@ def take_photo(albumPath):
     pht = face(0, location, encoding)
 
     alb = album.load(albumPath)
-    for photo in alb.match(pht, 0.6):
+    for photo in alb.match(pht, 0.35):
         print(photo[0].path, photo[1][0][0])
 
 

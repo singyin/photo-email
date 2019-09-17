@@ -21,8 +21,8 @@ class photo:
 
     def process(self):
         img      = fr.api.load_image_file(self.path)
-        location = fr.api.face_locations(img, number_of_times_to_upsample=2, model='hog')
-        encoding = fr.api.face_encodings(img, known_face_locations=location, num_jitters=5)
+        location = fr.api.face_locations(img, number_of_times_to_upsample=1, model='hog')
+        encoding = fr.api.face_encodings(img, known_face_locations=location, num_jitters=1)
         for i in range(len(encoding)) :
             self.faces.append(face(self.path, location[i], encoding[i]))
 

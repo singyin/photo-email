@@ -90,6 +90,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(587, 20);
             this.label1.TabIndex = 5;
+            this.label1.TextChanged += new System.EventHandler(this.Label1_TextChanged_1);
             // 
             // Form1
             // 

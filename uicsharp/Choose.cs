@@ -35,7 +35,7 @@ namespace Project_Blackhole
             string datapath="";
             try
             {   // Open the text file using a stream reader.
-                using (StreamReader sr = new StreamReader("./../../../var/photo_collection_path.txt"))
+                using (StreamReader sr = new StreamReader("./../../../paths/photo_collection_path.txt"))
                 {
                     // Read the stream to a string, and write the string to the console.
                     datapath = sr.ReadToEnd();

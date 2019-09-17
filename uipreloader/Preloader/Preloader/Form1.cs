@@ -68,7 +68,7 @@ namespace Preloader
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(path) || !File.Exists(path))
+            if (String.IsNullOrEmpty(path))
             {
                 MessageBox.Show("The path you provide is incorrect","Alert");
                 return;
@@ -88,6 +88,11 @@ namespace Preloader
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Label1_TextChanged_1(object sender, EventArgs e)
+        {
+            path = label1.Text;
         }
     }
 }

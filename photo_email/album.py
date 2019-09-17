@@ -22,6 +22,7 @@ class album:
     def process(self):
         img_paths = os.listdir(self.path)
         for img_path in img_paths:
+            print(img_path)
             if img_path.lower().endswith(('.png', '.jpg', '.jpeg')):
                 self.photos.append(photo(self.path+'\\'+img_path))
 
