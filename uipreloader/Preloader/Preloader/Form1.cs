@@ -46,7 +46,19 @@ namespace Preloader
         }
         private void passArg(string arg)
         {
-            ProcessStartInfo StartInfo = new ProcessStartInfo("C:/Python37/python.exe", "../../../../../photo_email/preload.py"+" "+arg);
+            string datapath = "";
+            try
+            {   // Open the text file using a stream reader.
+                using (StreamReader sr = new StreamReader("../../../../../paths/default_python_path.txt"))
+                {
+                    // Read the stream to a string, and write the string to the console.
+                    datapath = sr.ReadToEnd();
+                }
+            }
+            catch (IOException e)
+            {
+            }
+            ProcessStartInfo StartInfo = new ProcessStartInfo(datapath+"/python.exe", "../../../../../photo_email/preload.py"+" "+arg);
             //Config
             StartInfo.UseShellExecute = false;
             StartInfo.CreateNoWindow = true;

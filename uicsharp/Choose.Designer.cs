@@ -308,12 +308,14 @@
             // trackBar1
             // 
             this.trackBar1.BackColor = System.Drawing.Color.Gray;
+            this.trackBar1.LargeChange = 1;
             this.trackBar1.Location = new System.Drawing.Point(121, 593);
             this.trackBar1.Maximum = 20;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(203, 45);
             this.trackBar1.TabIndex = 39;
             this.trackBar1.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
+            this.trackBar1.ValueChanged += new System.EventHandler(this.TrackBar1_ValueChanged);
             // 
             // Choose
             // 

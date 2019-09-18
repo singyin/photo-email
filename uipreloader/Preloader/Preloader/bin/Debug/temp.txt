@@ -1,2 +1,2 @@
-C:\Users\4E14ChuYatHong\Desktop\MID
-test_data
+C:\Users\4E14ChuYatHong\Desktop\train
+st_data

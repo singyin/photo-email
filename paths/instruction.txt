@@ -16,3 +16,4 @@ But if you accidentally edited any of them, please create it with the name "defa
 P.S. 
 	1. All file paths should only contain '/' but not '\'. 
 	2. With no space in paths.
+	3. No ending '/' is needed

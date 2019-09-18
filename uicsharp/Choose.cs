@@ -28,7 +28,7 @@ namespace Project_Blackhole
         }
         string Path = "";
         List<string> Arr = new List<string>();
-        List<double> Val = new List<double>();
+        List<Tuple<string,double>> Base = new List<Tuple<string, double>>();
         bool[] SLT = new bool[1001];
         void GetMatchList()
         {
@@ -63,19 +63,24 @@ namespace Project_Blackhole
                 err = pro.StandardError.ReadToEnd();
                 output = pro.StandardOutput.ReadToEnd();
             }
-            //Console.WriteLine(output);
+            String[] kk = output.Split('\n');
             //string output = "../SourcePic/__1.jpg\n../SourcePic/__2.jpg\n../SourcePic/__3.jpg\n../SourcePic/__4.jpg\n../SourcePic/__5.jpg\n../SourcePic/__6.jpg\n../SourcePic/__7.jpg\n../SourcePic/__8.jpg\n";
-            string Buffer = "";
+            for (int i = 0; i < kk.Length - 1; i++) {
+                String[] temp = kk[i].Split(' ');
+                Base.Add(new Tuple<string, double>(temp[0], Convert.ToDouble(temp[1].Remove(temp[1].Length-8))));
+            }
+            /*
             for (int i = 0; i < output.Length; i++)
             {
                 if (output[i] == ' ')
                 {
-                    Arr.Add(Buffer);
+                    Temp = Buffer;
                     Buffer = "";
                 }
                 else if (output[i] == '\n')
                 {
-                    Val.Add(Double.Parse(Buffer));
+                    Base.Add(new Tuple<string, double>(Temp, Double.Parse(Buffer)));
+                    Console.WriteLine(Buffer);
                     Buffer = "";
                 }
                 else
@@ -83,6 +88,7 @@ namespace Project_Blackhole
                     Buffer += output[i];
                 }
             }
+            */
         }
         string ID;
         void SendEmail(string list)
@@ -106,7 +112,11 @@ namespace Project_Blackhole
         void Ini()
         {
             for (int i = 0; i <= 1000; i++) SLT[i] = false;
-
+            Base.OrderByDescending(pp => pp.Item2).ToList();
+            for (int i = 0; i < Base.Count; i++)
+            {
+                if (Base[i].Item2 <= trackBar1.Value) Arr.Add(Base[i].Item1);
+            }
         }
         public Choose(string s, string id)
         {
@@ -133,6 +143,7 @@ namespace Project_Blackhole
             pictureBox12.Location = new Point(0, 0);
             GetMatchList();
             Ini();
+            Setbrowse(0);
         }
         int cur = 0;
         Image ban_image = new Bitmap("./../SourcePic/unavailable.png");
@@ -262,8 +273,9 @@ namespace Project_Blackhole
             string Arg_Py = "";
             for (int i = 0; i < Arr.Count; i++)
             {
-                if (SLT[i]) Arg_Py += Arr[i].Substring(0, Arr[i].Length - 1) + ";";
+                if (SLT[i]) Arg_Py += Arr[i].Substring(0, Arr[i].Length) + ";";
             }
+            Console.WriteLine(Arg_Py);
             if (Arg_Py.Length <= 0)
             {
                 MessageBox.Show("No photo is chosen! Please choose at least 1 photo!", "No Photo Error");
@@ -399,6 +411,18 @@ namespace Project_Blackhole
         private void TrackBar1_Scroll(object sender, EventArgs e)
         {
 
+        }
+
+        private void TrackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            Arr.Clear();
+            for (int i = 0; i < Base.Count; i++)
+            {
+                if (Base[i].Item2*20 <= trackBar1.Value) Arr.Add(Base[i].Item1);
+            }
+            for (int i = 0; i < Base.Count; i++) SLT[i] = false;
+            cur = 0;
+            Setbrowse(0);
         }
     }
 }
