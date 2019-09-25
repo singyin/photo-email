@@ -4,6 +4,7 @@ import numpy as np
 import importlib
 import pickle
 import os
+import resize
 from face import face
 
 class photo:
@@ -20,7 +21,8 @@ class photo:
         return photo
 
     def process(self):
-        img      = fr.api.load_image_file(self.path)
+        resize.resize(self.path)
+        img      = fr.api.load_image_file(r'C:\FaceRecognition\photo-email\photo_email\temp\temp.jpg')
         location = fr.api.face_locations(img, number_of_times_to_upsample=1, model='hog')
         encoding = fr.api.face_encodings(img, known_face_locations=location, num_jitters=1)
         for i in range(len(encoding)) :
@@ -37,4 +39,7 @@ class photo:
         for face in self.faces:
             dist = fc.compare(face)
             if dist <= threshold : matches.append((dist, face))
-        return matches
+        if len(matches) > 0:
+            matches = sorted(matches, key = lambda x: x[0], reverse=False)
+            return matches[0]
+        else : return None

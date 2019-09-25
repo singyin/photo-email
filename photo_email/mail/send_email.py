@@ -78,6 +78,10 @@ class send_email:
       Returns:
         Sent Message.
       """
+      message = (self.service.users().messages().send(userId=user_id, body=message).execute())
+      print('Message Id: %s' % message['id'])
+      return message
+      """
       try:
         message = (self.service.users().messages().send(userId=user_id, body=message)
                    .execute())
@@ -85,3 +89,4 @@ class send_email:
         return message
       except errors.HttpError as error:
         print('An error occurred: %s' % error)
+      """

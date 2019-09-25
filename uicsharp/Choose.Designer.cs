@@ -45,6 +45,7 @@
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -126,6 +127,8 @@
             this.pictureBox6.TabIndex = 19;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.PictureBox6_Click);
+            this.pictureBox6.MouseEnter += new System.EventHandler(this.PictureBox6_MouseEnter);
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.PictureBox6_MouseLeave);
             // 
             // pictureBox5
             // 
@@ -143,6 +146,8 @@
             this.pictureBox5.TabIndex = 18;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.PictureBox5_Click);
+            this.pictureBox5.MouseEnter += new System.EventHandler(this.PictureBox5_MouseEnter);
+            this.pictureBox5.MouseLeave += new System.EventHandler(this.PictureBox5_MouseLeave);
             // 
             // pictureBox4
             // 
@@ -160,6 +165,8 @@
             this.pictureBox4.TabIndex = 17;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.PictureBox4_Click);
+            this.pictureBox4.MouseEnter += new System.EventHandler(this.PictureBox4_MouseEnter);
+            this.pictureBox4.MouseLeave += new System.EventHandler(this.PictureBox4_MouseLeave);
             // 
             // pictureBox3
             // 
@@ -177,6 +184,8 @@
             this.pictureBox3.TabIndex = 16;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.PictureBox3_MouseEnter);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.PictureBox3_MouseLeave);
             // 
             // pictureBox2
             // 
@@ -194,6 +203,8 @@
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.PictureBox2_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.PictureBox2_MouseLeave);
             // 
             // pictureBox7
             // 
@@ -308,14 +319,23 @@
             // trackBar1
             // 
             this.trackBar1.BackColor = System.Drawing.Color.Gray;
-            this.trackBar1.LargeChange = 1;
             this.trackBar1.Location = new System.Drawing.Point(121, 593);
             this.trackBar1.Maximum = 20;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(203, 45);
             this.trackBar1.TabIndex = 39;
+            this.trackBar1.Value = 10;
             this.trackBar1.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
-            this.trackBar1.ValueChanged += new System.EventHandler(this.TrackBar1_ValueChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Choose
             // 
@@ -326,6 +346,7 @@
             this.BackgroundImage = global::Project_Blackhole.Properties.Resources.Sing_Yin_Secondary_School__Choi_Wan__from_Choi_Hing_Road__19_51;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1260, 735);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox10);
@@ -384,5 +405,6 @@
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -3,4 +3,4 @@ import sys
 
 path = sys.argv[1]
 alb = album(path)
-alb.save();
+alb.save()

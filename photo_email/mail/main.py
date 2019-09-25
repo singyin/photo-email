@@ -80,12 +80,16 @@ http = credentials.authorize(httplib2.Http())
 service = discovery.build('gmail', 'v1', http=http)
 
 import send_email
-sender = "sy9711@syss.edu.hk"
+sender = "noreply.photosender@syss.edu.hk"
 # receiver = "sy9660@syss.edu.hk"
 receiver = sys.argv[2]
-subject = "Photo Email Set"
+subject = "SYSS Photos"
 content = """
+The photos selected are listed below. Thank you for using the system!
+If you have any enquiry, please contact Computer Club.
 
+Kind regards
+SYSS Computer Club William and Hardy
 """
 # python main.py C:\FaceRecongnition\photo-email\ui-csharp\bin\SourcePic\__5.jpg sy9660@syss.edu.hk
 # photo_list = [r"C:\FaceRecongnition\photo-email\ui-csharp\bin\SourcePic\__5.jpg"]

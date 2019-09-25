@@ -28,7 +28,7 @@ namespace Project_Blackhole
         }
         string Path = "";
         List<string> Arr = new List<string>();
-        List<Tuple<string,double>> Base = new List<Tuple<string, double>>();
+        List<Tuple<string, double>> Base = new List<Tuple<string, double>>();
         bool[] SLT = new bool[1001];
         void GetMatchList()
         {
@@ -45,11 +45,12 @@ namespace Project_Blackhole
             {
             }
             string output = "";
-            string err = "";
             //Provide script path
             string Pyname = "./../../../photo_email/camera.py";
             //string Pyname = @"./../Testing_Python/testing2.py";
             //Create Process Info
+
+
             ProcessStartInfo StartInfo = new ProcessStartInfo(Path);
             StartInfo.Arguments = $"\"{Pyname}\" "+datapath;
             //Config
@@ -60,52 +61,30 @@ namespace Project_Blackhole
             //Execution
             using (Process pro = Process.Start(StartInfo))
             {
-                err = pro.StandardError.ReadToEnd();
                 output = pro.StandardOutput.ReadToEnd();
             }
             String[] kk = output.Split('\n');
-            //string output = "../SourcePic/__1.jpg\n../SourcePic/__2.jpg\n../SourcePic/__3.jpg\n../SourcePic/__4.jpg\n../SourcePic/__5.jpg\n../SourcePic/__6.jpg\n../SourcePic/__7.jpg\n../SourcePic/__8.jpg\n";
-            for (int i = 0; i < kk.Length - 1; i++) {
-                String[] temp = kk[i].Split(' ');
-                Base.Add(new Tuple<string, double>(temp[0], Convert.ToDouble(temp[1].Remove(temp[1].Length-8))));
-            }
-            /*
-            for (int i = 0; i < output.Length; i++)
+            for (int i=0;i<kk.Length - 1; i++)
             {
-                if (output[i] == ' ')
-                {
-                    Temp = Buffer;
-                    Buffer = "";
-                }
-                else if (output[i] == '\n')
-                {
-                    Base.Add(new Tuple<string, double>(Temp, Double.Parse(Buffer)));
-                    Console.WriteLine(Buffer);
-                    Buffer = "";
-                }
-                else
-                {
-                    Buffer += output[i];
-                }
+                String[] temp = kk[i].Split(' ');
+                Base.Add(new Tuple<string, double>(temp[0], Convert.ToDouble(temp[1].Remove(temp[1].Length - 8))));
             }
-            */
+            if (output == null) MessageBox.Show("It seems there is no matched photo...\nThere are 2 reasons:\n1. You got no photo in the photo set :(\n2. You took the photo under insufficient lightness, inappropriate angle or strange emotion... :)", "Oops...Seems something went wrong!");
         }
         string ID;
         void SendEmail(string list)
         {
             string Pyname = @"./../../../photo_email/mail/main.py";
-            ProcessStartInfo StartInfo = new ProcessStartInfo(Path, Pyname + " " + list);
+            ProcessStartInfo StartInfo = new ProcessStartInfo(Path, Pyname + " " + list + " sy"+ID+"@syss.edu.hk");
             //Config
             StartInfo.UseShellExecute = false;
             StartInfo.CreateNoWindow = true;
-            StartInfo.RedirectStandardError = true;
+            StartInfo.RedirectStandardError = false;
             StartInfo.RedirectStandardOutput = true;
             //Execution
             string output = "";
-            string err = "";
             using (Process pro = Process.Start(StartInfo))
             {
-                err = pro.StandardError.ReadToEnd();
                 output = pro.StandardOutput.ReadToEnd();
             }
         }
@@ -113,11 +92,18 @@ namespace Project_Blackhole
         {
             for (int i = 0; i <= 1000; i++) SLT[i] = false;
             Base.OrderByDescending(pp => pp.Item2).ToList();
-            for (int i = 0; i < Base.Count; i++)
+            for (int i = Base.Count-1; i >=0 ; i--)
             {
-                if (Base[i].Item2 <= trackBar1.Value) Arr.Add(Base[i].Item1);
+                if (Base[i].Item2 <= trackBar1.Value/20.0)
+                {
+                    Arr.Add(Base[i].Item1);
+                }
             }
+            prev.Hide();
+            if (Arr.Count <= 6) next.Hide();
+            else next.Show();
         }
+        PhotoPreviewer photo_window =null;
         public Choose(string s, string id)
         {
             Path = s;
@@ -143,7 +129,7 @@ namespace Project_Blackhole
             pictureBox12.Location = new Point(0, 0);
             GetMatchList();
             Ini();
-            Setbrowse(0);
+            photo_window = new PhotoPreviewer();
         }
         int cur = 0;
         Image ban_image = new Bitmap("./../SourcePic/unavailable.png");
@@ -200,6 +186,7 @@ namespace Project_Blackhole
             Setbrowse(0);
             prev.Hide();
             if (Arr.Count <= 6) next.Hide();
+            photo_window.Show();
         }
         Image tick_image = new Bitmap("../SourcePic/Big_Tick.png");
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -275,7 +262,6 @@ namespace Project_Blackhole
             {
                 if (SLT[i]) Arg_Py += Arr[i].Substring(0, Arr[i].Length) + ";";
             }
-            Console.WriteLine(Arg_Py);
             if (Arg_Py.Length <= 0)
             {
                 MessageBox.Show("No photo is chosen! Please choose at least 1 photo!", "No Photo Error");
@@ -308,6 +294,7 @@ namespace Project_Blackhole
 
         private void Choose_FormClosing(object sender, FormClosingEventArgs e)
         {
+            photo_window.Dispose();
             Application.Exit();
         }
 
@@ -398,31 +385,89 @@ namespace Project_Blackhole
         {
 
         }
+        private void TrackBar1_Scroll(object sender, EventArgs e)
+        {
+            for (int i = 0; i <= 1000; i++) SLT[i] = false;
+            Arr.Clear();
+            cur = 0;
+            for (int i = Base.Count - 1; i >= 0 ; i--)
+            {
+                if (Base[i].Item2 <= trackBar1.Value / 20.0)
+                {
+                    Arr.Add(Base[i].Item1);
+                }
+            }
+            prev.Hide();
+            if (Arr.Count <= 6) next.Hide();
+            else next.Show();
+            Setbrowse(0);
+        }
 
         private void PictureBox1_MouseEnter(object sender, EventArgs e)
         {
-            if (cur * 6 + 0 >= Arr.Count) return;
+            photo_window.change_photo(pictureBox1.ImageLocation);
         }
-
+        
         private void PictureBox1_MouseLeave(object sender, EventArgs e)
         {
+            photo_window.clear_photo();
         }
 
-        private void TrackBar1_Scroll(object sender, EventArgs e)
+        private void PictureBox6_MouseEnter(object sender, EventArgs e)
         {
-
+            photo_window.change_photo(pictureBox6.ImageLocation);
         }
 
-        private void TrackBar1_ValueChanged(object sender, EventArgs e)
+        private void PictureBox6_MouseLeave(object sender, EventArgs e)
         {
-            Arr.Clear();
-            for (int i = 0; i < Base.Count; i++)
-            {
-                if (Base[i].Item2*20 <= trackBar1.Value) Arr.Add(Base[i].Item1);
-            }
-            for (int i = 0; i < Base.Count; i++) SLT[i] = false;
-            cur = 0;
-            Setbrowse(0);
+            photo_window.clear_photo();
+        }
+
+        private void PictureBox5_MouseLeave(object sender, EventArgs e)
+        {
+            photo_window.clear_photo();
+        }
+
+        private void PictureBox5_MouseEnter(object sender, EventArgs e)
+        {
+            photo_window.change_photo(pictureBox5.ImageLocation);
+        }
+
+        private void PictureBox4_MouseEnter(object sender, EventArgs e)
+        {
+            photo_window.change_photo(pictureBox4.ImageLocation);
+        }
+
+        private void PictureBox4_MouseLeave(object sender, EventArgs e)
+        {
+            photo_window.clear_photo();
+        }
+
+        private void PictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            photo_window.change_photo(pictureBox3.ImageLocation);
+        }
+
+        private void PictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            photo_window.clear_photo();
+        }
+
+        private void PictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            photo_window.change_photo(pictureBox2.ImageLocation);
+        }
+
+        private void PictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            photo_window.clear_photo();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            photo_window.Dispose();
+            new main().Show();
+            this.Dispose();
         }
     }
 }

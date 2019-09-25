@@ -83,11 +83,12 @@ namespace Project_Blackhole
             else
             {
                 checked_path = python_path + "/python.exe";
-                Console.WriteLine(python_path + "/python.exe");
                 this.Hide();
                 new Choose(checked_path, id_from_input).Show();
+                //this.Dispose();
                 return;
             }
+
         }
 
         private void Button2_Click(object sender, EventArgs e)

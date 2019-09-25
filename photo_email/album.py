@@ -34,9 +34,22 @@ class album:
 
     def match(self, fc, threshold):
         matches = []
-        for photo in self.photos:
-            photo_matches = photo.match(fc, threshold)
-            if len(photo_matches) > 0:
-                matches.append((photo,photo_matches))
+
+        if isinstance(fc, list):
+            for photo in self.photos:
+                photo_matches = []
+                for f in fc:
+                    temp = photo.match(f, threshold)
+                    if temp != None: 
+                        photo_matches.append(temp)
+                if len(photo_matches) >= 1:
+                    photo_matches = sorted(photo_matches, key = lambda x: x[0], reverse=False)
+                    matches.append((photo, photo_matches[0]))
+
+        else :
+            for photo in self.photos:
+                photo_match = photo.match(fc, threshold)
+                if photo_match != None:
+                    matches.append((photo, photo_match))
         return matches
 

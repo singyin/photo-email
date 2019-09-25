@@ -64,3 +64,4 @@ C:\Users\Administrator\Desktop\Photo Email\photo-email\uicsharp\obj\Debug\Projec
 C:\Users\Administrator\Desktop\Photo Email\photo-email\uicsharp\obj\Debug\Project Blackhole.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\Photo Email\photo-email\uicsharp\obj\Debug\Project Blackhole.exe
 C:\Users\Administrator\Desktop\Photo Email\photo-email\uicsharp\obj\Debug\Project Blackhole.pdb
+C:\FaceRecognition\photo-email\uicsharp\obj\Debug\Project_Blackhole.PhotoPreviewer.resources
