@@ -22,7 +22,10 @@ class photo:
 
     def process(self):
         resize.resize(self.path)
-        img      = fr.api.load_image_file(r'C:\FaceRecognition\photo-email\photo_email\temp\temp.jpg')
+        temp_path = self.path
+        while (temp_path[-1]!='\\'):
+            temp_path = temp_path[:-1]
+        img      = fr.api.load_image_file(temp_path+'___temp.jpg')
         location = fr.api.face_locations(img, number_of_times_to_upsample=1, model='hog')
         encoding = fr.api.face_encodings(img, known_face_locations=location, num_jitters=1)
         for i in range(len(encoding)) :

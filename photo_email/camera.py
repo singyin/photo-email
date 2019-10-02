@@ -47,13 +47,14 @@
 # take_photo(path)
 
 
-
+from PIL import Image
 import numpy as np
 import cv2
 import face_recognition as fr
 from face import face
 from album import album
 import sys
+import os
 
 def take_photo(albumPath):
     img = 0
@@ -65,7 +66,14 @@ def take_photo(albumPath):
     cv2.setWindowProperty('camera',cv2.WND_PROP_FULLSCREEN,cv2.WINDOW_FULLSCREEN)
     cv2.setWindowProperty('camera',cv2.WND_PROP_FULLSCREEN,cv2.WINDOW_NORMAL)
 
-    white = cv2.imread('C:/FaceRecognition/photo-email/photo_email/background.png')
+
+    # ii = Image.open('background.png')
+    # ret, camera = cap.read()
+    # print(camera.shape)
+    # im = ii.resize((ii.size[0]//3,ii.size[1]//3),Image.NEAREST)
+    white = cv2.imread('../../../photo_email/background.png')
+
+
 
     faces = []
     phrase = 0
@@ -109,7 +117,7 @@ def take_photo(albumPath):
         photo.append(face(0, location, encoding))
     
     alb = album.load(albumPath)
-    ppp = alb.match(photo, 0.6)
+    ppp = alb.match(photo, 0.8)
 #     print(r"""C:\Users\4E14ChuYatHong\Desktop\20190909_Prizegiving_ceremony\_DSC7317.JPG 0.4951498138713914
 # C:\Users\4E14ChuYatHong\Desktop\20190909_Prizegiving_ceremony\_DSC7318.JPG 0.502228817791267""")
     # sys.exit()
