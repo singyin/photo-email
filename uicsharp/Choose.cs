@@ -257,7 +257,12 @@ namespace Project_Blackhole
                 MessageBox.Show("It seems your email is invalid... Please try another email...", "Oops!");
                 return;
             }
-            string Arg_Py = "";
+            DialogResult dr = MessageBox.Show("You Email:\n********************\nsy" + ID + "@syss.edu.hk\n********************\n\nPlease confirm your email. I don't think you want your photos being seen by other students...", "Email Confirmation",MessageBoxButtons.YesNo);
+            if (dr == DialogResult.No)
+            {
+                return;
+            }
+            string Arg_Py ="";
             for (int i = 0; i < Arr.Count; i++)
             {
                 if (SLT[i]) Arg_Py += Arr[i].Substring(0, Arr[i].Length) + ";";

@@ -65,3 +65,14 @@ C:\Users\Administrator\Desktop\Photo Email\photo-email\uicsharp\obj\Debug\Projec
 C:\Users\Administrator\Desktop\Photo Email\photo-email\uicsharp\obj\Debug\Project Blackhole.exe
 C:\Users\Administrator\Desktop\Photo Email\photo-email\uicsharp\obj\Debug\Project Blackhole.pdb
 C:\FaceRecognition\photo-email\uicsharp\obj\Debug\Project_Blackhole.PhotoPreviewer.resources
+C:\Users\student\Desktop\project\photo-email\uicsharp\bin\Debug\Project Blackhole.exe.config
+C:\Users\student\Desktop\project\photo-email\uicsharp\bin\Debug\Project Blackhole.exe
+C:\Users\student\Desktop\project\photo-email\uicsharp\bin\Debug\Project Blackhole.pdb
+C:\Users\student\Desktop\project\photo-email\uicsharp\obj\Debug\Project Blackhole.csprojAssemblyReference.cache
+C:\Users\student\Desktop\project\photo-email\uicsharp\obj\Debug\Project_Blackhole.Choose.resources
+C:\Users\student\Desktop\project\photo-email\uicsharp\obj\Debug\Project_Blackhole.main.resources
+C:\Users\student\Desktop\project\photo-email\uicsharp\obj\Debug\Project_Blackhole.PhotoPreviewer.resources
+C:\Users\student\Desktop\project\photo-email\uicsharp\obj\Debug\Project_Blackhole.Properties.Resources.resources
+C:\Users\student\Desktop\project\photo-email\uicsharp\obj\Debug\Project Blackhole.csproj.GenerateResource.cache
+C:\Users\student\Desktop\project\photo-email\uicsharp\obj\Debug\Project Blackhole.exe
+C:\Users\student\Desktop\project\photo-email\uicsharp\obj\Debug\Project Blackhole.pdb
