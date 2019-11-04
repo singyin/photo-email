@@ -14,6 +14,9 @@ namespace Project_Blackhole
 {
     public partial class Choose : Form
     {
+        static List<Tuple<string, double>> Base = new List<Tuple<string, double>>();
+        PictureBox big_box = new PictureBox();
+
         public static bool IsValidEmail(string email)
         {
             try
@@ -28,8 +31,7 @@ namespace Project_Blackhole
         }
         string Path = "";
         List<string> Arr = new List<string>();
-        List<Tuple<string, double>> Base = new List<Tuple<string, double>>();
-        bool[] SLT = new bool[1001];
+        SortedDictionary<string, bool> SLT = new SortedDictionary<string, bool>();
         void GetMatchList()
         {
             string datapath="";
@@ -49,10 +51,8 @@ namespace Project_Blackhole
             string Pyname = "./../../../photo_email/camera.py";
             //string Pyname = @"./../Testing_Python/testing2.py";
             //Create Process Info
-
-
             ProcessStartInfo StartInfo = new ProcessStartInfo(Path);
-            StartInfo.Arguments = $"\"{Pyname}\" "+datapath;
+            StartInfo.Arguments = $"\"{Pyname}\" " + datapath;
             //Config
             StartInfo.UseShellExecute = false;
             StartInfo.CreateNoWindow = true;
@@ -74,8 +74,8 @@ namespace Project_Blackhole
         string ID;
         void SendEmail(string list)
         {
-            string Pyname = @"./../../../photo_email/mail/main.py";
-            ProcessStartInfo StartInfo = new ProcessStartInfo(Path, Pyname + " " + list + " sy"+ID+"@syss.edu.hk");
+            string Pyname = "\"./../../../photo_email/mail/main.py\"";
+            ProcessStartInfo StartInfo = new ProcessStartInfo('\"'+Path+'\"', Pyname + " " + list + " sy"+ID+"@syss.edu.hk");
             //Config
             StartInfo.UseShellExecute = false;
             StartInfo.CreateNoWindow = true;
@@ -90,18 +90,16 @@ namespace Project_Blackhole
         }
         void Ini()
         {
-            for (int i = 0; i <= 1000; i++) SLT[i] = false;
+            for (int i = 0; i < Base.Count; i++) SLT[Base[i].Item1] = false;
             Base.OrderByDescending(pp => pp.Item2).ToList();
             for (int i = Base.Count-1; i >=0 ; i--)
             {
+                SLT[Base[i].Item1] = false;
                 if (Base[i].Item2 <= trackBar1.Value/20.0)
                 {
                     Arr.Add(Base[i].Item1);
                 }
             }
-            prev.Hide();
-            if (Arr.Count <= 6) next.Hide();
-            else next.Show();
         }
         PhotoPreviewer photo_window =null;
         public Choose(string s, string id)
@@ -109,145 +107,36 @@ namespace Project_Blackhole
             Path = s;
             ID = id;
             InitializeComponent();
-            pictureBox1.Controls.Add(pictureBox7);
-            pictureBox7.BackColor = Color.Transparent;
-            pictureBox7.Location = new Point(0, 0);
-            pictureBox2.Controls.Add(pictureBox8);
-            pictureBox8.BackColor = Color.Transparent;
-            pictureBox8.Location = new Point(0, 0);
-            pictureBox3.Controls.Add(pictureBox9);
-            pictureBox9.BackColor = Color.Transparent;
-            pictureBox9.Location = new Point(0, 0);
-            pictureBox4.Controls.Add(pictureBox10);
-            pictureBox10.BackColor = Color.Transparent;
-            pictureBox10.Location = new Point(0, 0);
-            pictureBox5.Controls.Add(pictureBox11);
-            pictureBox11.BackColor = Color.Transparent;
-            pictureBox11.Location = new Point(0, 0);
-            pictureBox6.Controls.Add(pictureBox12);
-            pictureBox12.BackColor = Color.Transparent;
-            pictureBox12.Location = new Point(0, 0);
             GetMatchList();
             Ini();
-            photo_window = new PhotoPreviewer();
+            //photo_window = new PhotoPreviewer();
         }
         int cur = 0;
         Image ban_image = new Bitmap("./../SourcePic/unavailable.png");
-        void Setbrowse(int from)
+        void Setbrowse()
         {
-            if (from < Arr.Count) pictureBox1.ImageLocation = Arr[from];
-            else
+            checkedListBox1.Items.Clear();
+            Console.WriteLine(Arr.Count);
+            for (int i = 0; i < Arr.Count; i++)
             {
-                pictureBox1.BackgroundImage = ban_image;
-                pictureBox1.ImageLocation = null;
+                Console.WriteLine(Arr[i]);
+                checkedListBox1.Items.Add(Arr[i].Substring(Arr[i].LastIndexOf('\\')+1));
+                checkedListBox1.SetItemChecked(i,SLT[Arr[i]]);
             }
-            if (!SLT[from]) pictureBox7.Hide(); else pictureBox7.Show();
-            if (from + 1 < Arr.Count) pictureBox2.ImageLocation = Arr[from + 1];
-            else
-            {
-                pictureBox2.BackgroundImage = ban_image;
-                pictureBox2.ImageLocation = null;
-            }
-            if (!SLT[from + 1]) pictureBox8.Hide(); else pictureBox8.Show();
-            if (from + 2 < Arr.Count) pictureBox3.ImageLocation = Arr[from + 2];
-            else
-            {
-                pictureBox3.BackgroundImage = ban_image;
-                pictureBox3.ImageLocation = null;
-            }
-            if (!SLT[from + 2]) pictureBox9.Hide(); else pictureBox9.Show();
-            if (from + 3 < Arr.Count) pictureBox4.ImageLocation = Arr[from + 3];
-            else
-            {
-                pictureBox4.BackgroundImage = ban_image;
-                pictureBox4.ImageLocation = null;
-            }
-            if (!SLT[from + 3]) pictureBox10.Hide(); else pictureBox10.Show();
-            if (from + 4 < Arr.Count) pictureBox5.ImageLocation = Arr[from + 4];
-            else
-            {
-                pictureBox5.BackgroundImage = ban_image;
-                pictureBox5.ImageLocation = null;
-            }
-            if (!SLT[from + 4]) pictureBox11.Hide(); else pictureBox11.Show();
-            if (from + 5 < Arr.Count) pictureBox6.ImageLocation = Arr[from + 5];
-            else
-            {
-                pictureBox6.BackgroundImage = ban_image;
-                pictureBox6.ImageLocation = null;
-            }
-            if (!SLT[from + 5]) pictureBox12.Hide(); else pictureBox12.Show();
         }
         private void Choose_Load(object sender, EventArgs e)
         {
             confirm_button.FlatStyle = FlatStyle.Flat;
             confirm_button.FlatAppearance.BorderSize = 0;
-            pictureBox1.SizeMode = pictureBox2.SizeMode = pictureBox3.SizeMode = pictureBox4.SizeMode = pictureBox5.SizeMode = pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            Setbrowse(0);
-            prev.Hide();
-            if (Arr.Count <= 6) next.Hide();
-            photo_window.Show();
+            Setbrowse();
         }
         Image tick_image = new Bitmap("../SourcePic/Big_Tick.png");
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-            if (cur * 6 >= Arr.Count) return;
-            SLT[cur * 6] ^= true;
-            if (SLT[cur * 6]) pictureBox7.Show();
-            else pictureBox7.Hide();
-        }
-        private void PictureBox2_Click(object sender, EventArgs e)
-        {
-            if (cur * 6 + 1 >= Arr.Count) return;
-            SLT[cur * 6 + 1] ^= true;
-            if (SLT[cur * 6 + 1]) pictureBox8.Show();
-            else pictureBox8.Hide();
-        }
-
-        private void PictureBox3_Click(object sender, EventArgs e)
-        {
-            if (cur * 6 + 2 >= Arr.Count) return;
-            SLT[cur * 6 + 2] ^= true;
-            if (SLT[cur * 6 + 2]) pictureBox9.Show();
-            else pictureBox9.Hide();
-        }
-
-        private void PictureBox4_Click(object sender, EventArgs e)
-        {
-            if (cur * 6 + 3 >= Arr.Count) return;
-            SLT[cur * 6 + 3] ^= true;
-            if (SLT[cur * 6 + 3]) pictureBox10.Show();
-            else pictureBox10.Hide();
-        }
-
-        private void PictureBox5_Click(object sender, EventArgs e)
-        {
-            if (cur * 6 + 4 >= Arr.Count) return;
-            SLT[cur * 6 + 4] ^= true;
-            if (SLT[cur * 6 + 4]) pictureBox11.Show();
-            else pictureBox11.Hide();
-        }
-
-        private void PictureBox6_Click(object sender, EventArgs e)
-        {
-            if (cur * 6 + 5 >= Arr.Count) return;
-            SLT[cur * 6 + 5] ^= true;
-            if (SLT[cur * 6 + 5]) pictureBox12.Show();
-            else pictureBox12.Hide();
-        }
-
         private void Prev_Click(object sender, EventArgs e)
         {
-            next.Show();
-            if (--cur == 0) prev.Hide();
-            Setbrowse(cur * 6);
         }
 
         private void Next_Click(object sender, EventArgs e)
         {
-            prev.Show();
-            if ((++cur + 1) * 6 >= Arr.Count) next.Hide();
-            Setbrowse(cur * 6);
         }
 
         private void Confirm_button_Click(object sender, EventArgs e)
@@ -265,7 +154,7 @@ namespace Project_Blackhole
             string Arg_Py ="";
             for (int i = 0; i < Arr.Count; i++)
             {
-                if (SLT[i]) Arg_Py += Arr[i].Substring(0, Arr[i].Length) + ";";
+                if (SLT[Arr[i]]) Arg_Py += Arr[i].Substring(0, Arr[i].Length) + ";";
             }
             if (Arg_Py.Length <= 0)
             {
@@ -279,81 +168,16 @@ namespace Project_Blackhole
 
         private void Next_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Right)
-            {
-                prev.Show();
-                if ((++cur + 1) * 6 >= Arr.Count) next.Hide();
-                Setbrowse(cur * 6);
-            }
         }
 
         private void Prev_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Left)
-            {
-                next.Show();
-                if (--cur == 0) prev.Hide();
-                Setbrowse(cur * 6);
-            }
         }
 
         private void Choose_FormClosing(object sender, FormClosingEventArgs e)
         {
-            photo_window.Dispose();
             Application.Exit();
         }
-
-        private void PictureBox7_Click(object sender, EventArgs e)
-        {
-
-            if (cur * 6 >= Arr.Count) return;
-            SLT[cur * 6] ^= true;
-            if (SLT[cur * 6]) pictureBox7.Show();
-            else pictureBox7.Hide();
-        }
-        private void PictureBox8_Click(object sender, EventArgs e)
-        {
-            if (cur * 6 + 1 >= Arr.Count) return;
-            SLT[cur * 6 + 1] ^= true;
-            if (SLT[cur * 6 + 1]) pictureBox8.Show();
-            else pictureBox8.Hide();
-        }
-        private void PictureBox9_Click(object sender, EventArgs e)
-        {
-            if (cur * 6 + 2 >= Arr.Count) return;
-            SLT[cur * 6 + 2] ^= true;
-            if (SLT[cur * 6 + 2]) pictureBox9.Show();
-            else pictureBox9.Hide();
-        }
-        private void PictureBox10_Click(object sender, EventArgs e)
-        {
-            if (cur * 6 + 3 >= Arr.Count) return;
-            SLT[cur * 6 + 3] ^= true;
-            if (SLT[cur * 6 + 3]) pictureBox10.Show();
-            else pictureBox10.Hide();
-        }
-        private void PictureBox11_Click(object sender, EventArgs e)
-        {
-            if (cur * 6 + 4 >= Arr.Count) return;
-            SLT[cur * 6 + 4] ^= true;
-            if (SLT[cur * 6 + 4]) pictureBox11.Show();
-            else pictureBox11.Hide();
-        }
-
-        private void PictureBox12_Click(object sender, EventArgs e)
-        {
-            if (cur * 6 + 5 >= Arr.Count) return;
-            SLT[cur * 6 + 5] ^= true;
-            if (SLT[cur * 6 + 5]) pictureBox12.Show();
-            else pictureBox12.Hide();
-        }
-
-        private void PictureBox7_Click_1(object sender, EventArgs e){PictureBox7_Click(sender, e);}
-        private void PictureBox8_Click_1(object sender, EventArgs e){PictureBox8_Click(sender, e);}
-        private void PictureBox9_Click_1(object sender, EventArgs e){PictureBox9_Click(sender, e);}
-        private void PictureBox10_Click_1(object sender, EventArgs e){PictureBox10_Click(sender, e);}
-        private void PictureBox11_Click_1(object sender, EventArgs e){PictureBox11_Click(sender, e);}
-        private void PictureBox12_Click_1(object sender, EventArgs e){PictureBox12_Click(sender, e);}
 
         private void PictureBox7_MouseUp(object sender, MouseEventArgs e)
         {
@@ -392,7 +216,6 @@ namespace Project_Blackhole
         }
         private void TrackBar1_Scroll(object sender, EventArgs e)
         {
-            for (int i = 0; i <= 1000; i++) SLT[i] = false;
             Arr.Clear();
             cur = 0;
             for (int i = Base.Count - 1; i >= 0 ; i--)
@@ -402,77 +225,41 @@ namespace Project_Blackhole
                     Arr.Add(Base[i].Item1);
                 }
             }
-            prev.Hide();
-            if (Arr.Count <= 6) next.Hide();
-            else next.Show();
-            Setbrowse(0);
+            Console.WriteLine(Arr.Count);
+            Setbrowse();
         }
-
-        private void PictureBox1_MouseEnter(object sender, EventArgs e)
-        {
-            photo_window.change_photo(pictureBox1.ImageLocation);
-        }
-        
-        private void PictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            photo_window.clear_photo();
-        }
-
-        private void PictureBox6_MouseEnter(object sender, EventArgs e)
-        {
-            photo_window.change_photo(pictureBox6.ImageLocation);
-        }
-
-        private void PictureBox6_MouseLeave(object sender, EventArgs e)
-        {
-            photo_window.clear_photo();
-        }
-
-        private void PictureBox5_MouseLeave(object sender, EventArgs e)
-        {
-            photo_window.clear_photo();
-        }
-
-        private void PictureBox5_MouseEnter(object sender, EventArgs e)
-        {
-            photo_window.change_photo(pictureBox5.ImageLocation);
-        }
-
-        private void PictureBox4_MouseEnter(object sender, EventArgs e)
-        {
-            photo_window.change_photo(pictureBox4.ImageLocation);
-        }
-
-        private void PictureBox4_MouseLeave(object sender, EventArgs e)
-        {
-            photo_window.clear_photo();
-        }
-
-        private void PictureBox3_MouseEnter(object sender, EventArgs e)
-        {
-            photo_window.change_photo(pictureBox3.ImageLocation);
-        }
-
-        private void PictureBox3_MouseLeave(object sender, EventArgs e)
-        {
-            photo_window.clear_photo();
-        }
-
-        private void PictureBox2_MouseEnter(object sender, EventArgs e)
-        {
-            photo_window.change_photo(pictureBox2.ImageLocation);
-        }
-
-        private void PictureBox2_MouseLeave(object sender, EventArgs e)
-        {
-            photo_window.clear_photo();
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
-            photo_window.Dispose();
             new main().Show();
             this.Dispose();
+        }
+
+        private void CheckedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (checkedListBox1.SelectedIndex!=-1)SLT[Arr[checkedListBox1.SelectedIndex]]^=true;
+        }
+
+        private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pictureBox1.BackgroundImage = Image.FromFile(Arr[checkedListBox1.SelectedIndex]);
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Arr.Count; i++)
+            {
+                checkedListBox1.SetItemChecked(i, true);
+                SLT[Arr[i]] = true;
+            }
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Arr.Count; i++)
+            {
+                checkedListBox1.SetItemChecked(i, false);
+                SLT[Arr[i]] = false;
+            }
         }
     }
 }

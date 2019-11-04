@@ -30,35 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Choose));
             this.confirm_button = new System.Windows.Forms.Button();
-            this.prev = new System.Windows.Forms.Button();
-            this.next = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // confirm_button
@@ -80,246 +59,10 @@
             this.confirm_button.UseVisualStyleBackColor = false;
             this.confirm_button.Click += new System.EventHandler(this.Confirm_button_Click);
             // 
-            // prev
-            // 
-            this.prev.BackColor = System.Drawing.Color.Transparent;
-            this.prev.BackgroundImage = global::Project_Blackhole.Properties.Resources.arrowL;
-            this.prev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.prev.FlatAppearance.BorderSize = 0;
-            this.prev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prev.ForeColor = System.Drawing.Color.Transparent;
-            this.prev.Location = new System.Drawing.Point(12, 260);
-            this.prev.Name = "prev";
-            this.prev.Size = new System.Drawing.Size(65, 65);
-            this.prev.TabIndex = 12;
-            this.prev.UseVisualStyleBackColor = false;
-            this.prev.Click += new System.EventHandler(this.Prev_Click);
-            this.prev.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Prev_KeyPress);
-            // 
-            // next
-            // 
-            this.next.BackColor = System.Drawing.Color.Transparent;
-            this.next.BackgroundImage = global::Project_Blackhole.Properties.Resources.arrowR;
-            this.next.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.next.FlatAppearance.BorderSize = 0;
-            this.next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.next.Location = new System.Drawing.Point(1183, 260);
-            this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(65, 65);
-            this.next.TabIndex = 13;
-            this.next.UseVisualStyleBackColor = false;
-            this.next.Click += new System.EventHandler(this.Next_Click);
-            this.next.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Next_KeyPress);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.ErrorImage")));
-            this.pictureBox6.InitialImage = null;
-            this.pictureBox6.Location = new System.Drawing.Point(840, 302);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(316, 187);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 19;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.PictureBox6_Click);
-            this.pictureBox6.MouseEnter += new System.EventHandler(this.PictureBox6_MouseEnter);
-            this.pictureBox6.MouseLeave += new System.EventHandler(this.PictureBox6_MouseLeave);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.ErrorImage")));
-            this.pictureBox5.InitialImage = null;
-            this.pictureBox5.Location = new System.Drawing.Point(480, 302);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(316, 187);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 18;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.PictureBox5_Click);
-            this.pictureBox5.MouseEnter += new System.EventHandler(this.PictureBox5_MouseEnter);
-            this.pictureBox5.MouseLeave += new System.EventHandler(this.PictureBox5_MouseLeave);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.ErrorImage")));
-            this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(121, 302);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(316, 187);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 17;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.PictureBox4_Click);
-            this.pictureBox4.MouseEnter += new System.EventHandler(this.PictureBox4_MouseEnter);
-            this.pictureBox4.MouseLeave += new System.EventHandler(this.PictureBox4_MouseLeave);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.ErrorImage")));
-            this.pictureBox3.InitialImage = null;
-            this.pictureBox3.Location = new System.Drawing.Point(840, 93);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(316, 187);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 16;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
-            this.pictureBox3.MouseEnter += new System.EventHandler(this.PictureBox3_MouseEnter);
-            this.pictureBox3.MouseLeave += new System.EventHandler(this.PictureBox3_MouseLeave);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
-            this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(480, 93);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(316, 187);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
-            this.pictureBox2.MouseEnter += new System.EventHandler(this.PictureBox2_MouseEnter);
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.PictureBox2_MouseLeave);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
-            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox7.Location = new System.Drawing.Point(121, 93);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(316, 187);
-            this.pictureBox7.TabIndex = 33;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Visible = false;
-            this.pictureBox7.Click += new System.EventHandler(this.PictureBox7_Click_1);
-            this.pictureBox7.MouseEnter += new System.EventHandler(this.PictureBox7_MouseEnter);
-            this.pictureBox7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBox7_MouseUp);
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.BackgroundImage")));
-            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox10.Location = new System.Drawing.Point(121, 302);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(316, 187);
-            this.pictureBox10.TabIndex = 34;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Visible = false;
-            this.pictureBox10.Click += new System.EventHandler(this.PictureBox10_Click_1);
-            this.pictureBox10.MouseEnter += new System.EventHandler(this.PictureBox10_MouseEnter);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
-            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox8.Location = new System.Drawing.Point(480, 93);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(316, 187);
-            this.pictureBox8.TabIndex = 35;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Visible = false;
-            this.pictureBox8.Click += new System.EventHandler(this.PictureBox8_Click_1);
-            this.pictureBox8.MouseEnter += new System.EventHandler(this.PictureBox8_MouseEnter);
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.BackgroundImage")));
-            this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox11.Location = new System.Drawing.Point(480, 302);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(316, 187);
-            this.pictureBox11.TabIndex = 36;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.Visible = false;
-            this.pictureBox11.Click += new System.EventHandler(this.PictureBox11_Click_1);
-            this.pictureBox11.MouseEnter += new System.EventHandler(this.PictureBox11_MouseEnter);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
-            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox9.Location = new System.Drawing.Point(840, 93);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(316, 187);
-            this.pictureBox9.TabIndex = 37;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Visible = false;
-            this.pictureBox9.Click += new System.EventHandler(this.PictureBox9_Click_1);
-            this.pictureBox9.MouseEnter += new System.EventHandler(this.PictureBox9_MouseEnter);
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox12.BackgroundImage")));
-            this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox12.Location = new System.Drawing.Point(840, 302);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(316, 187);
-            this.pictureBox12.TabIndex = 38;
-            this.pictureBox12.TabStop = false;
-            this.pictureBox12.Visible = false;
-            this.pictureBox12.Click += new System.EventHandler(this.PictureBox12_Click_1);
-            this.pictureBox12.MouseEnter += new System.EventHandler(this.PictureBox12_MouseEnter);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(121, 93);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(316, 187);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.PictureBox1_MouseEnter);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.PictureBox1_MouseLeave);
-            // 
             // trackBar1
             // 
             this.trackBar1.BackColor = System.Drawing.Color.Gray;
-            this.trackBar1.Location = new System.Drawing.Point(121, 593);
+            this.trackBar1.Location = new System.Drawing.Point(121, 611);
             this.trackBar1.Maximum = 20;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(203, 45);
@@ -327,15 +70,62 @@
             this.trackBar1.Value = 10;
             this.trackBar1.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.checkedListBox1.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(78, 365);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(246, 224);
+            this.checkedListBox1.TabIndex = 41;
+            this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox1_ItemCheck);
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.CheckedListBox1_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(341, 65);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(843, 525);
+            this.pictureBox1.TabIndex = 42;
+            this.pictureBox1.TabStop = false;
+            // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Exit";
+            this.button1.Size = new System.Drawing.Size(141, 31);
+            this.button1.TabIndex = 43;
+            this.button1.Text = "Back To Login";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.LightGreen;
+            this.button2.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(78, 321);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 35);
+            this.button2.TabIndex = 44;
+            this.button2.Text = "Select All";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.LightPink;
+            this.button3.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(217, 321);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(107, 35);
+            this.button3.TabIndex = 45;
+            this.button3.Text = "Unselect All";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // Choose
             // 
@@ -346,23 +136,13 @@
             this.BackgroundImage = global::Project_Blackhole.Properties.Resources.Sing_Yin_Secondary_School__Choi_Wan__from_Choi_Hing_Road__19_51;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1260, 735);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.next);
-            this.Controls.Add(this.prev);
-            this.Controls.Add(this.confirm_button);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.confirm_button);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -370,19 +150,8 @@
             this.Text = "Photo Selection Interface";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Choose_FormClosing);
             this.Load += new System.EventHandler(this.Choose_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,21 +159,11 @@
 
         #endregion
         private System.Windows.Forms.Button confirm_button;
-        private System.Windows.Forms.Button prev;
-        private System.Windows.Forms.Button next;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

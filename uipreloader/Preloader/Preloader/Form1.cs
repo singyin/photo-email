@@ -75,6 +75,42 @@ namespace Preloader
             if (err != "")
             {
                 MessageBox.Show("Oops... Something's wrong in the preloader.py, please check the validity of your folder!","ERROR");
+                Console.WriteLine(err);
+                Application.Exit();
+            }
+        }
+        void remove_space(string path)
+        {
+            string datapath = "";
+            try
+            {   // Open the text file using a stream reader.
+                using (StreamReader sr = new StreamReader("../../../../../paths/default_python_path.txt"))
+                {
+                    // Read the stream to a string, and write the string to the console.
+                    datapath = sr.ReadToEnd();
+                }
+            }
+            catch (IOException e)
+            {
+            }
+            ProcessStartInfo StartInfo = new ProcessStartInfo(datapath + "/python.exe", "../../../../../remove_spaces.py" + " " + path);
+            //Config
+            StartInfo.UseShellExecute = false;
+            StartInfo.CreateNoWindow = true;
+            StartInfo.RedirectStandardError = true;
+            StartInfo.RedirectStandardOutput = true;
+            //Execution
+            string output = "";
+            string err = "";
+            using (Process pro = Process.Start(StartInfo))
+            {
+                err = pro.StandardError.ReadToEnd();
+                output = pro.StandardOutput.ReadToEnd();
+            }
+            if (err != "")
+            {
+                MessageBox.Show("Oops... Something's wrong in the remove_spaces.py, please check the validity of your directory!", "ERROR");
+                Console.WriteLine(err);
                 Application.Exit();
             }
         }
@@ -85,6 +121,7 @@ namespace Preloader
                 MessageBox.Show("The path you provide is incorrect","Alert");
                 return;
             }
+            remove_space(path);
             passArg(path);
             MessageBox.Show("Photos set is compiled! Thanks for using the system!");
             using (FileStream fs = new FileStream("./temp.txt", FileMode.OpenOrCreate))

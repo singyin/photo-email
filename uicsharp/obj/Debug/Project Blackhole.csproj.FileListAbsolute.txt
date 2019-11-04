@@ -76,3 +76,28 @@ C:\Users\student\Desktop\project\photo-email\uicsharp\obj\Debug\Project_Blackhol
 C:\Users\student\Desktop\project\photo-email\uicsharp\obj\Debug\Project Blackhole.csproj.GenerateResource.cache
 C:\Users\student\Desktop\project\photo-email\uicsharp\obj\Debug\Project Blackhole.exe
 C:\Users\student\Desktop\project\photo-email\uicsharp\obj\Debug\Project Blackhole.pdb
+C:\FaceRecongnition\photoemail\uicsharp\obj\Debug\Project_Blackhole.PhotoPreviewer.resources
+E:\photoemail\uicsharp\obj\Debug\Project Blackhole.csprojAssemblyReference.cache
+E:\photoemail\uicsharp\obj\Debug\Project_Blackhole.Choose.resources
+E:\photoemail\uicsharp\obj\Debug\Project_Blackhole.main.resources
+E:\photoemail\uicsharp\obj\Debug\Project_Blackhole.PhotoPreviewer.resources
+E:\photoemail\uicsharp\obj\Debug\Project_Blackhole.Properties.Resources.resources
+E:\photoemail\uicsharp\obj\Debug\Project Blackhole.csproj.GenerateResource.cache
+E:\photoemail\uicsharp\obj\Debug\Project Blackhole.csproj.CoreCompileInputs.cache
+E:\photoemail\uicsharp\obj\Debug\Project Blackhole.exe
+E:\photoemail\uicsharp\obj\Debug\Project Blackhole.pdb
+E:\photoemail\uicsharp\bin\Debug\Project Blackhole.exe.config
+E:\photoemail\uicsharp\bin\Debug\Project Blackhole.exe
+E:\photoemail\uicsharp\bin\Debug\Project Blackhole.pdb
+C:\Users\defaultuser100029\Desktop\photoemail\uicsharp\bin\Debug\Project Blackhole.exe.config
+C:\Users\defaultuser100029\Desktop\photoemail\uicsharp\bin\Debug\Project Blackhole.exe
+C:\Users\defaultuser100029\Desktop\photoemail\uicsharp\bin\Debug\Project Blackhole.pdb
+C:\Users\defaultuser100029\Desktop\photoemail\uicsharp\obj\Debug\Project Blackhole.csprojAssemblyReference.cache
+C:\Users\defaultuser100029\Desktop\photoemail\uicsharp\obj\Debug\Project_Blackhole.Choose.resources
+C:\Users\defaultuser100029\Desktop\photoemail\uicsharp\obj\Debug\Project_Blackhole.main.resources
+C:\Users\defaultuser100029\Desktop\photoemail\uicsharp\obj\Debug\Project_Blackhole.PhotoPreviewer.resources
+C:\Users\defaultuser100029\Desktop\photoemail\uicsharp\obj\Debug\Project_Blackhole.Properties.Resources.resources
+C:\Users\defaultuser100029\Desktop\photoemail\uicsharp\obj\Debug\Project Blackhole.csproj.GenerateResource.cache
+C:\Users\defaultuser100029\Desktop\photoemail\uicsharp\obj\Debug\Project Blackhole.csproj.CoreCompileInputs.cache
+C:\Users\defaultuser100029\Desktop\photoemail\uicsharp\obj\Debug\Project Blackhole.exe
+C:\Users\defaultuser100029\Desktop\photoemail\uicsharp\obj\Debug\Project Blackhole.pdb

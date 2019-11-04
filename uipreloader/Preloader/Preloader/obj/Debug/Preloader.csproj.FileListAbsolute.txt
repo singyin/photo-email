@@ -18,3 +18,13 @@ C:\FaceRecognition\photo-email\uipreloader\Preloader\Preloader\obj\Debug\Preload
 C:\FaceRecognition\photo-email\uipreloader\Preloader\Preloader\obj\Debug\Preloader.csproj.CoreCompileInputs.cache
 C:\FaceRecognition\photo-email\uipreloader\Preloader\Preloader\obj\Debug\Preloader.exe
 C:\FaceRecognition\photo-email\uipreloader\Preloader\Preloader\obj\Debug\Preloader.pdb
+C:\Users\defaultuser100029\Desktop\photoemail\uipreloader\Preloader\Preloader\bin\Debug\Preloader.exe.config
+C:\Users\defaultuser100029\Desktop\photoemail\uipreloader\Preloader\Preloader\bin\Debug\Preloader.exe
+C:\Users\defaultuser100029\Desktop\photoemail\uipreloader\Preloader\Preloader\bin\Debug\Preloader.pdb
+C:\Users\defaultuser100029\Desktop\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.csprojAssemblyReference.cache
+C:\Users\defaultuser100029\Desktop\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.Form1.resources
+C:\Users\defaultuser100029\Desktop\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.Properties.Resources.resources
+C:\Users\defaultuser100029\Desktop\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.csproj.GenerateResource.cache
+C:\Users\defaultuser100029\Desktop\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.csproj.CoreCompileInputs.cache
+C:\Users\defaultuser100029\Desktop\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.exe
+C:\Users\defaultuser100029\Desktop\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.pdb
