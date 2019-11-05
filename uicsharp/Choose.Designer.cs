@@ -36,46 +36,48 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // confirm_button
             // 
-            this.confirm_button.BackColor = System.Drawing.Color.Transparent;
+            this.confirm_button.BackColor = System.Drawing.Color.LightBlue;
             this.confirm_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.confirm_button.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.confirm_button.FlatAppearance.BorderSize = 0;
-            this.confirm_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.confirm_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.confirm_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirm_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
+            this.confirm_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.confirm_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.confirm_button.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirm_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.confirm_button.Image = ((System.Drawing.Image)(resources.GetObject("confirm_button.Image")));
-            this.confirm_button.Location = new System.Drawing.Point(1029, 611);
+            this.confirm_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.confirm_button.Location = new System.Drawing.Point(1103, 659);
             this.confirm_button.Name = "confirm_button";
-            this.confirm_button.Size = new System.Drawing.Size(185, 65);
+            this.confirm_button.Size = new System.Drawing.Size(128, 48);
             this.confirm_button.TabIndex = 11;
+            this.confirm_button.Text = "Confirm";
             this.confirm_button.UseVisualStyleBackColor = false;
             this.confirm_button.Click += new System.EventHandler(this.Confirm_button_Click);
             // 
             // trackBar1
             // 
             this.trackBar1.BackColor = System.Drawing.Color.Gray;
-            this.trackBar1.Location = new System.Drawing.Point(121, 611);
+            this.trackBar1.Location = new System.Drawing.Point(76, 542);
             this.trackBar1.Maximum = 20;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(203, 45);
+            this.trackBar1.Size = new System.Drawing.Size(246, 45);
             this.trackBar1.TabIndex = 39;
             this.trackBar1.Value = 10;
             this.trackBar1.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
             // 
             // checkedListBox1
             // 
-            this.checkedListBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.checkedListBox1.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.checkedListBox1.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBox1.ForeColor = System.Drawing.SystemColors.InfoText;
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(78, 365);
+            this.checkedListBox1.Location = new System.Drawing.Point(76, 296);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(246, 224);
             this.checkedListBox1.TabIndex = 41;
@@ -107,7 +109,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.LightGreen;
             this.button2.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(78, 321);
+            this.button2.Location = new System.Drawing.Point(76, 252);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 35);
             this.button2.TabIndex = 44;
@@ -119,13 +121,23 @@
             // 
             this.button3.BackColor = System.Drawing.Color.LightPink;
             this.button3.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(217, 321);
+            this.button3.Location = new System.Drawing.Point(215, 252);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(107, 35);
             this.button3.TabIndex = 45;
             this.button3.Text = "Unselect All";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1190, 65);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(22, 22);
+            this.button4.TabIndex = 48;
+            this.button4.Text = "?";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // Choose
             // 
@@ -136,6 +148,7 @@
             this.BackgroundImage = global::Project_Blackhole.Properties.Resources.Sing_Yin_Secondary_School__Choi_Wan__from_Choi_Hing_Road__19_51;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1260, 735);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -147,7 +160,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Choose";
-            this.Text = "Photo Selection Interface";
+            this.Text = "SYSS Photo Recognizer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Choose_FormClosing);
             this.Load += new System.EventHandler(this.Choose_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
@@ -165,5 +178,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

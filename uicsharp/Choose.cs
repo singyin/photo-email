@@ -146,12 +146,7 @@ namespace Project_Blackhole
                 MessageBox.Show("It seems your email is invalid... Please try another email...", "Oops!");
                 return;
             }
-            DialogResult dr = MessageBox.Show("You Email:\n********************\nsy" + ID + "@syss.edu.hk\n********************\n\nPlease confirm your email. I don't think you want your photos being seen by other students...", "Email Confirmation",MessageBoxButtons.YesNo);
-            if (dr == DialogResult.No)
-            {
-                return;
-            }
-            string Arg_Py ="";
+            string Arg_Py = "";
             for (int i = 0; i < Arr.Count; i++)
             {
                 if (SLT[Arr[i]]) Arg_Py += Arr[i].Substring(0, Arr[i].Length) + ";";
@@ -159,6 +154,11 @@ namespace Project_Blackhole
             if (Arg_Py.Length <= 0)
             {
                 MessageBox.Show("No photo is chosen! Please choose at least 1 photo!", "No Photo Error");
+                return;
+            }
+            DialogResult dr = MessageBox.Show(Arg_Py.Count(x => x == ';').ToString()+" photos are being sent.\n\nYou Email:\n********************\nsy" + ID + "@syss.edu.hk\n********************\n\nPlease confirm your email. I don't think you want your photos being seen by other students...", "Email Confirmation",MessageBoxButtons.YesNo);
+            if (dr == DialogResult.No)
+            {
                 return;
             }
             Arg_Py = Arg_Py.Substring(0, Arg_Py.Length - 1);
@@ -225,7 +225,7 @@ namespace Project_Blackhole
                     Arr.Add(Base[i].Item1);
                 }
             }
-            Console.WriteLine(Arr.Count);
+            //label1.Text=trackBar1.Value.ToString("F");
             Setbrowse();
         }
         private void Button1_Click(object sender, EventArgs e)
@@ -260,6 +260,11 @@ namespace Project_Blackhole
                 checkedListBox1.SetItemChecked(i, false);
                 SLT[Arr[i]] = false;
             }
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1. Choose photos by Space and Up and Down arrow keys.\n2. Click on the filename to get a preview of the photo.\n3. Adjust the threshold by the scrollbar.\n4. Please confirm the email after choosing the photos.", "How to use the system?");
         }
     }
 }
