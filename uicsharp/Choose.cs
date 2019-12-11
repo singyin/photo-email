@@ -67,7 +67,9 @@ namespace Project_Blackhole
             for (int i=0;i<kk.Length - 1; i++)
             {
                 String[] temp = kk[i].Split(' ');
-                Base.Add(new Tuple<string, double>(temp[0], Convert.ToDouble(temp[1].Remove(temp[1].Length - 8))));
+                Console.WriteLine(temp[1]);
+                Console.WriteLine(temp[1].Length);
+                Base.Add(new Tuple<string, double>(temp[0], Convert.ToDouble(temp[1].Remove(temp[1].Length-8))));
             }
             if (output == null) MessageBox.Show("It seems there is no matched photo...\nThere are 2 reasons:\n1. You got no photo in the photo set :(\n2. You took the photo under insufficient lightness, inappropriate angle or strange emotion... :)", "Oops...Seems something went wrong!");
         }
@@ -225,7 +227,6 @@ namespace Project_Blackhole
                     Arr.Add(Base[i].Item1);
                 }
             }
-            //label1.Text=trackBar1.Value.ToString("F");
             Setbrowse();
         }
         private void Button1_Click(object sender, EventArgs e)
