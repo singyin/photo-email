@@ -12,6 +12,19 @@ Some libraries are written in C++ and required a C++ compiler and `cmake` to bui
 
 ## How to Use
 
+-**Initialization**:
+Input path of **Python3** to photo-email/paths/default_python_path
+
+-**Preloading the photos**:
+Preload the photos by pasting the directory on the *Preloader*
+Input the encodings file to photo-email/paths/photo_collection_path
+
+-**Choosing the photos**:
+Start *UICSharp* and enter the school ID (eg sy12345 -> 12345)
+Press **c** to take face photos, for **3** times
+
+-**Sending emails**:
+Run *send_queue.py* and enter password
 
 ## Classes
 
