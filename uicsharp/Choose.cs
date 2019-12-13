@@ -64,6 +64,10 @@ namespace Project_Blackhole
                 output = pro.StandardOutput.ReadToEnd();
             }
             String[] kk = output.Split('\n');
+            if (kk.Length > 0)
+            {
+                dirPath = kk[0].Substring(0, kk[0].LastIndexOf('\\')+1);
+            }
             for (int i=0;i<kk.Length - 1; i++)
             {
                 String[] temp = kk[i].Split(' ');
@@ -76,7 +80,8 @@ namespace Project_Blackhole
         string ID;
         void SendEmail(string list)
         {
-            string Pyname = "\"./../../../photo_email/mail/main.py\"";
+            string Pyname = "\"./../../../photo_email/mail/savejson.py\"";
+            Console.WriteLine('\"' + Path + '\"', Pyname + " " + list + " sy" + ID + "@syss.edu.hk");
             ProcessStartInfo StartInfo = new ProcessStartInfo('\"'+Path+'\"', Pyname + " " + list + " sy"+ID+"@syss.edu.hk");
             //Config
             StartInfo.UseShellExecute = false;
@@ -97,11 +102,12 @@ namespace Project_Blackhole
             for (int i = Base.Count-1; i >=0 ; i--)
             {
                 SLT[Base[i].Item1] = false;
-                if (Base[i].Item2 <= trackBar1.Value/20.0)
+                if (Base[i].Item2 <= 0.4 + trackBar1.Value * 0.02)
                 {
                     Arr.Add(Base[i].Item1);
                 }
             }
+
         }
         PhotoPreviewer photo_window =null;
         public Choose(string s, string id)
@@ -115,6 +121,7 @@ namespace Project_Blackhole
         }
         int cur = 0;
         Image ban_image = new Bitmap("./../SourcePic/unavailable.png");
+        string dirPath;
         void Setbrowse()
         {
             checkedListBox1.Items.Clear();
@@ -149,9 +156,9 @@ namespace Project_Blackhole
                 return;
             }
             string Arg_Py = "";
-            for (int i = 0; i < Arr.Count; i++)
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
             {
-                if (SLT[Arr[i]]) Arg_Py += Arr[i].Substring(0, Arr[i].Length) + ";";
+                if (checkedListBox1.GetItemChecked(i)) Arg_Py += dirPath + checkedListBox1.Items[i] + ";";
             }
             if (Arg_Py.Length <= 0)
             {
@@ -222,7 +229,7 @@ namespace Project_Blackhole
             cur = 0;
             for (int i = Base.Count - 1; i >= 0 ; i--)
             {
-                if (Base[i].Item2 <= trackBar1.Value / 20.0)
+                if (Base[i].Item2 <= 0.4+trackBar1.Value*0.02)
                 {
                     Arr.Add(Base[i].Item1);
                 }

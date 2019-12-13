@@ -27,7 +27,7 @@ def get_labels():
             print(label['name'])
 
 SCOPES = 'https://mail.google.com/'
-CLIENT_SECRET_FILE = r'credentials.json'
+CLIENT_SECRET_FILE = 'C:/Users/student/Desktop/project/photo-email/photo_email/mail/credentials.json'
 APPLICATION_NAME = 'Gmail API Python Quickstart'
 authInst = auth.auth(SCOPES,CLIENT_SECRET_FILE,APPLICATION_NAME)
 credentials = authInst.get_credentials()
@@ -50,10 +50,6 @@ SYSS Computer Club William and Hardy
 # python main.py C:\FaceRecongnition\photo-email\ui-csharp\bin\SourcePic\__5.jpg sy9660@syss.edu.hk
 # photo_list = [r"C:\FaceRecongnition\photo-email\ui-csharp\bin\SourcePic\__5.jpg"]
 photo_list=sys.argv[1].split(';')
-# print(photo_list)
-# for i in range(len(photo_list)):
-#     print(photo_list[i])
-#     photo_list[i]=photo_list[i].replace('\\','/')
 sendInst = send_email.send_email(service)
 message = sendInst.create_message_with_attachment(sender,receiver,subject,content, photo_list)
 sendInst.send_message('me',message)
