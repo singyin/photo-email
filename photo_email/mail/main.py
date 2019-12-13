@@ -47,8 +47,6 @@ If you have any enquiry, please contact Computer Club.
 Kind regards
 SYSS Computer Club William and Hardy
 """
-# python main.py C:\FaceRecongnition\photo-email\ui-csharp\bin\SourcePic\__5.jpg sy9660@syss.edu.hk
-# photo_list = [r"C:\FaceRecongnition\photo-email\ui-csharp\bin\SourcePic\__5.jpg"]
 photo_list=sys.argv[1].split(';')
 sendInst = send_email.send_email(service)
 message = sendInst.create_message_with_attachment(sender,receiver,subject,content, photo_list)

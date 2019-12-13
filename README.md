@@ -6,20 +6,12 @@ The platform uses the [face_recognition](https://github.com/ageitgey/face_recogn
 
 Some libraries are written in C++ and required a C++ compiler and `cmake` to build and link to Python. The steps are as follows:
 
-1. Install Python 3.7
-1. Install C++ compiler
-1. Install cmake
-1. Install libraries by the following commands:
-
-```
-pip install opencv-python
-pip install dlib
-pip install face_recognition
-pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
-```
+1. https://cmake.org/download/ - Install CMake
+2. Visual Studio import installation config : project.vsconfig - Install necessary modules for C#
+3. pip install dlib matplotlib numpy importlib pickle-mixin pillow opencv-python smtp-mail face_recognition - Install necessary modules for Python
 
 ## How to Use
-...
+
 
 ## Classes
 
