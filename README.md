@@ -8,7 +8,7 @@ Some libraries are written in C++ and required a C++ compiler and `cmake` to bui
 
 1. https://cmake.org/download/ - Install CMake
 2. Visual Studio import installation config : project.vsconfig - Install necessary modules for C#
-3. pip install dlib matplotlib numpy importlib pickle-mixin pillow opencv-python smtp-mail face_recognition - Install necessary modules for Python
+3. pip install dlib matplotlib numpy importlib pickle-mixin pillow opencv-python smtp-mail pyperclip face_recognition - Install necessary modules for Python
 
 ## How to Use
 

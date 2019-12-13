@@ -28,3 +28,12 @@ C:\Users\defaultuser100029\Desktop\photoemail\uipreloader\Preloader\Preloader\ob
 C:\Users\defaultuser100029\Desktop\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.csproj.CoreCompileInputs.cache
 C:\Users\defaultuser100029\Desktop\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.exe
 C:\Users\defaultuser100029\Desktop\photoemail\uipreloader\Preloader\Preloader\obj\Debug\Preloader.pdb
+C:\Users\Student\Desktop\project\photo-email\uipreloader\Preloader\Preloader\bin\Debug\Preloader.exe.config
+C:\Users\Student\Desktop\project\photo-email\uipreloader\Preloader\Preloader\bin\Debug\Preloader.exe
+C:\Users\Student\Desktop\project\photo-email\uipreloader\Preloader\Preloader\bin\Debug\Preloader.pdb
+C:\Users\Student\Desktop\project\photo-email\uipreloader\Preloader\Preloader\obj\Debug\Preloader.csprojAssemblyReference.cache
+C:\Users\Student\Desktop\project\photo-email\uipreloader\Preloader\Preloader\obj\Debug\Preloader.Form1.resources
+C:\Users\Student\Desktop\project\photo-email\uipreloader\Preloader\Preloader\obj\Debug\Preloader.Properties.Resources.resources
+C:\Users\Student\Desktop\project\photo-email\uipreloader\Preloader\Preloader\obj\Debug\Preloader.csproj.GenerateResource.cache
+C:\Users\Student\Desktop\project\photo-email\uipreloader\Preloader\Preloader\obj\Debug\Preloader.exe
+C:\Users\Student\Desktop\project\photo-email\uipreloader\Preloader\Preloader\obj\Debug\Preloader.pdb
