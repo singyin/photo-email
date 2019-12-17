@@ -37,6 +37,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -52,10 +53,11 @@
             this.confirm_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.confirm_button.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirm_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.confirm_button.Location = new System.Drawing.Point(1103, 659);
+            this.confirm_button.Location = new System.Drawing.Point(1103, 608);
             this.confirm_button.Name = "confirm_button";
-            this.confirm_button.Size = new System.Drawing.Size(128, 48);
+            this.confirm_button.Size = new System.Drawing.Size(128, 44);
             this.confirm_button.TabIndex = 11;
+            this.confirm_button.TabStop = false;
             this.confirm_button.Text = "Confirm";
             this.confirm_button.UseVisualStyleBackColor = false;
             this.confirm_button.Click += new System.EventHandler(this.Confirm_button_Click);
@@ -63,11 +65,11 @@
             // trackBar1
             // 
             this.trackBar1.BackColor = System.Drawing.Color.Gray;
-            this.trackBar1.Location = new System.Drawing.Point(76, 542);
+            this.trackBar1.Location = new System.Drawing.Point(76, 500);
             this.trackBar1.Maximum = 20;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(246, 45);
-            this.trackBar1.TabIndex = 39;
+            this.trackBar1.TabIndex = 0;
             this.trackBar1.Value = 10;
             this.trackBar1.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
             // 
@@ -77,10 +79,10 @@
             this.checkedListBox1.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedListBox1.ForeColor = System.Drawing.SystemColors.InfoText;
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(76, 296);
+            this.checkedListBox1.Location = new System.Drawing.Point(76, 273);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(246, 224);
-            this.checkedListBox1.TabIndex = 41;
+            this.checkedListBox1.Size = new System.Drawing.Size(246, 172);
+            this.checkedListBox1.TabIndex = 1;
             this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox1_ItemCheck);
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.CheckedListBox1_SelectedIndexChanged);
             // 
@@ -88,19 +90,21 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(341, 65);
+            this.pictureBox1.Location = new System.Drawing.Point(341, 60);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(843, 525);
+            this.pictureBox1.Size = new System.Drawing.Size(843, 485);
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(12, 11);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 31);
+            this.button1.Size = new System.Drawing.Size(141, 29);
             this.button1.TabIndex = 43;
+            this.button1.TabStop = false;
             this.button1.Text = "Back To Login";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -109,10 +113,11 @@
             // 
             this.button2.BackColor = System.Drawing.Color.LightGreen;
             this.button2.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(76, 252);
+            this.button2.Location = new System.Drawing.Point(76, 233);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 35);
+            this.button2.Size = new System.Drawing.Size(107, 32);
             this.button2.TabIndex = 44;
+            this.button2.TabStop = false;
             this.button2.Text = "Select All";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
@@ -121,33 +126,47 @@
             // 
             this.button3.BackColor = System.Drawing.Color.LightPink;
             this.button3.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(215, 252);
+            this.button3.Location = new System.Drawing.Point(215, 233);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 35);
+            this.button3.Size = new System.Drawing.Size(107, 32);
             this.button3.TabIndex = 45;
+            this.button3.TabStop = false;
             this.button3.Text = "Unselect All";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1190, 65);
+            this.button4.Location = new System.Drawing.Point(1190, 60);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(22, 22);
+            this.button4.Size = new System.Drawing.Size(22, 20);
             this.button4.TabIndex = 48;
             this.button4.Text = "?";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(151, 461);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 24);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "# of photos : N/A";
+            // 
             // Choose
             // 
             this.AcceptButton = this.confirm_button;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.BackgroundImage = global::Project_Blackhole.Properties.Resources.Sing_Yin_Secondary_School__Choi_Wan__from_Choi_Hing_Road__19_51;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1260, 735);
+            this.CancelButton = this.button1;
+            this.ClientSize = new System.Drawing.Size(1260, 678);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -179,5 +198,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label1;
     }
 }

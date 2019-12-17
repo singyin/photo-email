@@ -124,5 +124,38 @@ namespace Project_Blackhole
         private void Label1_TextChanged_1(object sender, EventArgs e)
         {
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists(data_path))
+            {
+                MessageBox.Show("You have no face data in the default path (" + data_path + "). Please make sure you have run preloader to calculate the face encodings.", "Face Data Unavailable");
+                return;
+            }
+            bool Valid(string s)
+            {
+                if (s.Length!=2) return false;
+                return true;
+            }
+            string checked_path = "";
+            if (!Valid(id_from_input))
+            {
+                MessageBox.Show("The teacher initial you entered is invalid, please try again", "Invalid input");
+                return;
+            }
+            bool default_valid = File.Exists(python_path + "/python.exe");
+            if (!File.Exists(label1.Text + "/python.exe"))
+            {
+                MessageBox.Show("The python directory has no python.exe. Please confirm the directory has one.", "Python Interpretor Unavailable");
+                return;
+            }
+            else
+            {
+                checked_path = python_path + "/python.exe";
+                this.Hide();
+                new Choose(checked_path, id_from_input).Show();
+                return;
+            }
+        }
     }
 }

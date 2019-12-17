@@ -81,8 +81,7 @@ namespace Project_Blackhole
         void SendEmail(string list)
         {
             string Pyname = "\"./../../../photo_email/mail/savejson.py\"";
-            Console.WriteLine('\"' + Path + '\"', Pyname + " " + list + " sy" + ID + "@syss.edu.hk");
-            ProcessStartInfo StartInfo = new ProcessStartInfo('\"'+Path+'\"', Pyname + " " + list + " sy"+ID+"@syss.edu.hk");
+            ProcessStartInfo StartInfo = new ProcessStartInfo('\"'+Path+'\"', Pyname + " " + list);
             //Config
             StartInfo.UseShellExecute = false;
             StartInfo.CreateNoWindow = true;
@@ -102,7 +101,7 @@ namespace Project_Blackhole
             for (int i = Base.Count-1; i >=0 ; i--)
             {
                 SLT[Base[i].Item1] = false;
-                if (Base[i].Item2 <= 0.4 + trackBar1.Value * 0.02)
+                if (Base[i].Item2 <= 0.2 + trackBar1.Value * 0.02)
                 {
                     Arr.Add(Base[i].Item1);
                 }
@@ -150,11 +149,6 @@ namespace Project_Blackhole
 
         private void Confirm_button_Click(object sender, EventArgs e)
         {
-            if (!IsValidEmail("sy" + ID + "@syss.edu.hk"))
-            {
-                MessageBox.Show("It seems your email is invalid... Please try another email...", "Oops!");
-                return;
-            }
             string Arg_Py = "";
             for (int i = 0; i < checkedListBox1.Items.Count; i++)
             {
@@ -171,7 +165,8 @@ namespace Project_Blackhole
                 return;
             }
             Arg_Py = Arg_Py.Substring(0, Arg_Py.Length - 1);
-            SendEmail(Arg_Py + " " + "sy" + ID + "@syss.edu.hk");
+            if (ID.Length != 2) SendEmail(Arg_Py + " " + "sy" + ID + "@syss.edu.hk");
+            else SendEmail(Arg_Py + " " + "syss" + ID + "@singyin.edu.hk");
             MessageBox.Show("Email Sent!\nThanks for using the system!", "Notice");
         }
 
@@ -229,12 +224,13 @@ namespace Project_Blackhole
             cur = 0;
             for (int i = Base.Count - 1; i >= 0 ; i--)
             {
-                if (Base[i].Item2 <= 0.4+trackBar1.Value*0.02)
+                if (Base[i].Item2 <= 0.2+trackBar1.Value*0.03)
                 {
                     Arr.Add(Base[i].Item1);
                 }
             }
             Setbrowse();
+            label1.Text = "# of photos : " + Arr.Count.ToString();
         }
         private void Button1_Click(object sender, EventArgs e)
         {
