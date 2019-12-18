@@ -11,3 +11,6 @@ data["QUEUE"].append([receiver,lst])
 
 with open('../../../photo_email/mail/data.json','w') as outfile:
     json.dump(data,outfile)
+
+with open("data.json","w") as outfile:
+    json.dump(data,outfile)

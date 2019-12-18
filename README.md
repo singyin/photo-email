@@ -26,6 +26,11 @@ Press **c** to take face photos, for **3** times
 -**Sending emails**:
 Run *send_queue.py* and enter password
 
+-**Redirect the paths**:
+Replace photo-email/photo_email/mail/data.json with the new data.json
+In order to redirect the paths, run **changelistpath.py** and paste the directory that contains the photos into it.
+After that you can just run **send_queue.py** to send the emails
+
 ## Classes
 
 The major classes and their interface are shown below:

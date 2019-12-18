@@ -37,7 +37,10 @@ class sender:
             name = os.path.basename(fl)
             att["Content-Disposition"] = 'attachment; filename='+name
             msg.attach(att)
-        os.remove(path+"___temp.jpg")
+        try:
+            os.remove(path+"___temp.jpg")
+        except OSError:
+            pass
         server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
         server.ehlo()
         try:
