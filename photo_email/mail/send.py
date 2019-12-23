@@ -23,7 +23,13 @@ class sender:
         msg.attach(MIMEText("""
         The photos selected are listed below. Thank you for using the system!
         If you have any enquiry, please contact Computer Club.
-
+        
+        We would appreciate it if you could give me some advice about the User Experience.
+        Please spare a little time and fill in the questionnaire below.
+        """))
+        msg.attach(MIMEText(u'<a href="https://docs.google.com/forms/d/e/1FAIpQLSc98pWBdyFoooQjyEq33VAw3UjJORW6gJIudiN2j5IaP6nwPw/viewform?usp=sf_link">Click Here</a>','html'))
+        msg.attach(MIMEText("""
+		
         Kind regards
         SYSS Computer Club William and Hardy
         """, 'plain', 'utf-8'))
